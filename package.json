@@ -1,0 +1,14 @@
+{
+  "name": "gramsetu",
+  "version": "1.0.0",
+  "description": "GramSetu - Bridging Villages to Markets. Rural Digital Marketplace.",
+  "scripts": {
+    "server": "node server/server.js",
+    "client": "npm.cmd --prefix client run dev",
+    "build": "npm.cmd --prefix client run build",
+    "start": "node server/server.js"
+  },
+  "keywords": ["rural-marketplace", "agriculture", "farmers", "artisans", "gramsetu"],
+  "author": "GramSetu Community",
+  "license": "MIT"
+}

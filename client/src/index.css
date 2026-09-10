@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #F8FAF5;
+    color: #1F2937;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#176B3A] hover:bg-[#12542D] text-white font-medium px-5 py-2.5 rounded-xl transition-all duration-200 shadow-sm hover:shadow active:scale-[0.98] inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-[#4F9D45] hover:bg-[#3E8336] text-white font-medium px-5 py-2.5 rounded-xl transition-all duration-200 shadow-sm hover:shadow active:scale-[0.98] inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-accent {
+    @apply bg-[#F4B942] hover:bg-[#E5A932] text-[#1F2937] font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 shadow-sm hover:shadow active:scale-[0.98] inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-outline {
+    @apply border-2 border-[#176B3A] text-[#176B3A] hover:bg-[#176B3A] hover:text-white font-medium px-5 py-2.5 rounded-xl transition-all duration-200 active:scale-[0.98] inline-flex items-center justify-center gap-2;
+  }
+
+  .card-rural {
+    @apply bg-white rounded-2xl border border-stone-200/80 shadow-soft hover:shadow-soft-hover transition-all duration-300;
+  }
+
+  .badge-verified {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#E8F5ED] text-[#176B3A] border border-[#176B3A]/20;
+  }
+}
+
+/* Pulse animation for microphone voice listing */
+@keyframes micPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(244, 185, 66, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 25px rgba(244, 185, 66, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(244, 185, 66, 0);
+  }
+}
+
+.mic-active {
+  animation: micPulse 1.8s infinite;
+}
+
+/* Subtle agricultural watermark background pattern */
+.bg-agro-pattern {
+  background-image: radial-gradient(rgba(23, 107, 58, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
