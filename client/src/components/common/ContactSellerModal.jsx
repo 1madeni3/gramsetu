@@ -46,7 +46,7 @@ const ContactSellerModal = ({ seller, product, isOpen, onClose }) => {
           {/* Seller Card Preview */}
           <div className="flex items-start gap-4 p-4 rounded-xl bg-[#F8FAF5] border border-stone-200/80 mb-5">
             <img
-              src={seller.avatar || "https://images.unsplash.com/photo-1628272107134-c66c4b580952?auto=format&fit=crop&w=400&q=80"}
+              src={seller.avatar || "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80"}
               alt={seller.name}
               className="w-14 h-14 rounded-full object-cover border-2 border-[#176B3A]/20"
             />

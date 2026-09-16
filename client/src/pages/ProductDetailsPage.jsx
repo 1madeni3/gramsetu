@@ -339,7 +339,7 @@ const ProductDetailsPage = ({ product, setActivePage, onSelectSeller }) => {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-stone-100 pb-4">
           <div className="flex items-center gap-4">
             <img
-              src={seller.avatar || "https://images.unsplash.com/photo-1628272107134-c66c4b580952?auto=format&fit=crop&w=400&q=80"}
+              src={seller.avatar || "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80"}
               alt={seller.name}
               className="w-16 h-16 rounded-2xl object-cover border-2 border-[#176B3A]/20 shadow-sm"
             />

@@ -230,7 +230,7 @@ const BuyerDashboardPage = ({ setActivePage, onTrackOrder }) => {
             <div className="bg-white p-5 rounded-2xl border border-stone-200 shadow-soft flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <img
-                  src="https://images.unsplash.com/photo-1628272107134-c66c4b580952?auto=format&fit=crop&w=400&q=80"
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80"
                   alt="Nitin Imade"
                   className="w-12 h-12 rounded-full object-cover border-2 border-[#176B3A]"
                 />
