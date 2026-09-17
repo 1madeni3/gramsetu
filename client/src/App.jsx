@@ -219,6 +219,16 @@ function AppContent() {
         }}
       />
 
+      {/* Global Floating Admin Portal Quick Button */}
+      <button
+        onClick={() => setActivePage(activePage === 'admin-dashboard' ? 'home' : 'admin-dashboard')}
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-2.5 rounded-full bg-amber-400 hover:bg-amber-300 text-stone-950 font-black text-xs shadow-2xl border-2 border-stone-900/10 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+        title="Quick Access: Admin Portal (All Users Data)"
+      >
+        <span className="text-base">👑</span>
+        <span>{activePage === 'admin-dashboard' ? 'Exit Admin View' : 'Admin Portal (All Users)'}</span>
+      </button>
+
       {/* Global Footer */}
       <Footer setActivePage={setActivePage} />
     </div>
