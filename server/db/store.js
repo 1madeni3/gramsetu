@@ -23,15 +23,19 @@ class DataStore {
       reviews: initialReviews,
       users: [
         {
-          id: "user-buyer-1",
-          name: "Aditya Shivale",
-          email: "buyer@gramsetu.in",
-          phone: "+91 98200 12345",
-          role: "buyer",
-          village: "Gangapur",
+          id: "user-admin-1",
+          name: "Nitin Imade",
+          email: "admin@gramsetu.in",
+          phone: "+91 98221 45091",
+          role: "admin",
+          status: "Active",
+          village: "Dindori",
           district: "Nashik",
           state: "Maharashtra",
-          password: "password123"
+          avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+          joinedDate: "January 2024",
+          password: "password123",
+          title: "Super Administrator"
         },
         {
           id: "user-seller-1",
@@ -39,11 +43,156 @@ class DataStore {
           email: "seller@gramsetu.in",
           phone: "+91 98221 45091",
           role: "seller",
+          status: "Verified",
           sellerId: "seller-1",
           village: "Dindori",
           district: "Nashik",
           state: "Maharashtra",
-          password: "password123"
+          avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+          joinedDate: "January 2024",
+          password: "password123",
+          specialty: "Wheat, Onions & Table Tomatoes"
+        },
+        {
+          id: "user-seller-2",
+          name: "Siddhesh Kumbhar",
+          email: "siddhesh.kumbhar@gramsetu.in",
+          phone: "+91 94310 82711",
+          role: "seller",
+          status: "Verified",
+          sellerId: "seller-2",
+          village: "Ranti",
+          district: "Madhubani",
+          state: "Bihar",
+          avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+          joinedDate: "March 2024",
+          password: "password123",
+          specialty: "Terracotta Pottery & Bamboo Crafts"
+        },
+        {
+          id: "user-seller-3",
+          name: "Unnati Pawar",
+          email: "unnati.pawar@gramsetu.in",
+          phone: "+91 97233 11840",
+          role: "seller",
+          status: "Verified",
+          sellerId: "seller-3",
+          village: "Mogri",
+          district: "Anand",
+          state: "Gujarat",
+          avatar: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=400&q=80",
+          joinedDate: "November 2023",
+          password: "password123",
+          specialty: "A2 Gir Cow Milk & Bilona Ghee"
+        },
+        {
+          id: "user-seller-4",
+          name: "Neha Kale",
+          email: "neha.kale@gramsetu.in",
+          phone: "+91 98811 77622",
+          role: "seller",
+          status: "Verified",
+          sellerId: "seller-4",
+          village: "Tapola",
+          district: "Satara",
+          state: "Maharashtra",
+          avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80",
+          joinedDate: "February 2024",
+          password: "password123",
+          specialty: "Raw Sahyadri Wild Forest Honey"
+        },
+        {
+          id: "user-seller-5",
+          name: "Kajal Mali",
+          email: "kajal.mali@gramsetu.in",
+          phone: "+91 98450 63219",
+          role: "seller",
+          status: "Verified",
+          sellerId: "seller-5",
+          village: "Madikeri",
+          district: "Kodagu",
+          state: "Karnataka",
+          avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80",
+          joinedDate: "December 2023",
+          password: "password123",
+          specialty: "High-Curcumin Turmeric & Hill Spices"
+        },
+        {
+          id: "user-seller-6",
+          name: "Apurva Shinde",
+          email: "apurva.shinde@gramsetu.in",
+          phone: "+91 94432 99014",
+          role: "seller",
+          status: "Verified",
+          sellerId: "seller-6",
+          village: "Omalur",
+          district: "Salem",
+          state: "Tamil Nadu",
+          avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=400&q=80",
+          joinedDate: "May 2024",
+          password: "password123",
+          specialty: "Pure Cotton Khadi & Handloom Bags"
+        },
+        {
+          id: "user-seller-7",
+          name: "Aditya Shivale",
+          email: "aditya.shivale@gramsetu.in",
+          phone: "+91 98200 12345",
+          role: "seller",
+          status: "Verified",
+          sellerId: "seller-7",
+          village: "Gangapur",
+          district: "Nashik",
+          state: "Maharashtra",
+          avatar: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=400&q=80",
+          joinedDate: "January 2024",
+          password: "password123",
+          specialty: "Mechanized Tractors & Solar Pump Services"
+        },
+        {
+          id: "user-buyer-1",
+          name: "Aditya Shivale",
+          email: "buyer@gramsetu.in",
+          phone: "+91 98200 12345",
+          role: "buyer",
+          status: "Active",
+          village: "Gangapur",
+          district: "Nashik",
+          state: "Maharashtra",
+          avatar: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=400&q=80",
+          joinedDate: "January 2024",
+          password: "password123",
+          ordersCount: 3
+        },
+        {
+          id: "user-buyer-2",
+          name: "Maya Joshi",
+          email: "maya.joshi@gmail.com",
+          phone: "+91 98230 44556",
+          role: "buyer",
+          status: "Active",
+          village: "Kothrud",
+          district: "Pune",
+          state: "Maharashtra",
+          avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+          joinedDate: "February 2024",
+          password: "password123",
+          ordersCount: 7
+        },
+        {
+          id: "user-buyer-3",
+          name: "Rajesh Patel",
+          email: "rajesh.patel@patelagro.in",
+          phone: "+91 99099 88776",
+          role: "buyer",
+          status: "Active",
+          village: "Maninagar",
+          district: "Ahmedabad",
+          state: "Gujarat",
+          avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80",
+          joinedDate: "March 2024",
+          password: "password123",
+          ordersCount: 12
         }
       ]
     };
@@ -325,6 +474,60 @@ class DataStore {
   }
 
   // Users & Auth
+  getUsers(filters = {}) {
+    let list = [...this.data.users];
+    const { role, search, status, state } = filters;
+
+    if (role && role !== 'all') {
+      list = list.filter(u => u.role.toLowerCase() === role.toLowerCase());
+    }
+
+    if (status && status !== 'all') {
+      list = list.filter(u => (u.status || 'Active').toLowerCase() === status.toLowerCase());
+    }
+
+    if (state && state !== 'all') {
+      list = list.filter(u => u.state?.toLowerCase() === state.toLowerCase());
+    }
+
+    if (search) {
+      const q = search.toLowerCase().trim();
+      list = list.filter(u =>
+        u.name.toLowerCase().includes(q) ||
+        u.email.toLowerCase().includes(q) ||
+        u.phone?.includes(q) ||
+        u.village?.toLowerCase().includes(q) ||
+        u.district?.toLowerCase().includes(q) ||
+        u.state?.toLowerCase().includes(q)
+      );
+    }
+
+    // Enrich with live seller/buyer stats
+    return list.map(u => {
+      let stats = {};
+      if (u.role === 'seller' && u.sellerId) {
+        const prods = this.data.products.filter(p => p.sellerId === u.sellerId);
+        const sellerOrders = this.data.orders.filter(o => o.items.some(item => item.sellerId === u.sellerId));
+        stats = {
+          listingsCount: prods.length,
+          ordersReceived: sellerOrders.length,
+          totalRevenue: sellerOrders.reduce((sum, o) => sum + (o.total || 0), 0)
+        };
+      } else if (u.role === 'buyer') {
+        const buyerOrders = this.data.orders.filter(o => o.deliveryAddress?.phone === u.phone || o.deliveryAddress?.name === u.name);
+        stats = {
+          ordersPlaced: buyerOrders.length || u.ordersCount || 0,
+          totalSpent: buyerOrders.reduce((sum, o) => sum + (o.total || 0), 0)
+        };
+      }
+      return { ...u, stats };
+    });
+  }
+
+  getUserById(id) {
+    return this.data.users.find(u => u.id === id);
+  }
+
   findUserByEmail(email) {
     return this.data.users.find(u => u.email.toLowerCase() === email.toLowerCase());
   }
@@ -333,11 +536,50 @@ class DataStore {
     const newUser = {
       id: `user-${Date.now()}`,
       role: 'buyer',
+      status: 'Active',
+      joinedDate: new Date().toLocaleDateString('en-IN', { month: 'long', year: 'numeric' }),
       ...userData
     };
     this.data.users.push(newUser);
     this.save();
     return newUser;
+  }
+
+  updateUser(id, updates) {
+    const user = this.getUserById(id);
+    if (!user) return null;
+    Object.assign(user, updates);
+    this.save();
+    return user;
+  }
+
+  deleteUser(id) {
+    const idx = this.data.users.findIndex(u => u.id === id);
+    if (idx === -1) return false;
+    const removed = this.data.users.splice(idx, 1)[0];
+    this.save();
+    return removed;
+  }
+
+  getPlatformStats() {
+    const totalUsers = this.data.users.length;
+    const totalSellers = this.data.sellers.length;
+    const totalBuyers = this.data.users.filter(u => u.role === 'buyer').length;
+    const totalProducts = this.data.products.length;
+    const totalOrders = this.data.orders.length;
+    const totalGMV = this.data.orders.reduce((sum, o) => sum + (o.total || 0), 0);
+    const activeStates = [...new Set(this.data.sellers.map(s => s.state))].length;
+
+    return {
+      totalUsers,
+      totalSellers,
+      totalBuyers,
+      totalProducts,
+      totalOrders,
+      totalGMV,
+      activeStates,
+      panchayatsConnected: 450
+    };
   }
 }
 

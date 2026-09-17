@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
 
 const LoginPage = ({ setActivePage }) => {
-  const { login, loginDemoBuyer, loginDemoSeller } = useAuth();
+  const { login, loginDemoBuyer, loginDemoSeller, loginDemoAdmin } = useAuth();
   const { t } = useLanguage();
 
   const [role, setRole] = useState('buyer'); // 'buyer' or 'seller'
@@ -26,7 +26,9 @@ const LoginPage = ({ setActivePage }) => {
     setError('');
     try {
       const loggedIn = await login(email, password);
-      if (loggedIn.role === 'seller') {
+      if (loggedIn.role === 'admin') {
+        setActivePage('admin-dashboard');
+      } else if (loggedIn.role === 'seller') {
         setActivePage('seller-dashboard');
       } else {
         setActivePage('buyer-dashboard');
@@ -44,6 +46,11 @@ const LoginPage = ({ setActivePage }) => {
   const handleQuickSeller = () => {
     loginDemoSeller();
     setActivePage('seller-dashboard');
+  };
+
+  const handleQuickAdmin = () => {
+    loginDemoAdmin();
+    setActivePage('admin-dashboard');
   };
 
   return (
@@ -68,9 +75,9 @@ const LoginPage = ({ setActivePage }) => {
         </div>
 
         {/* 1-Click Quick Demo Access Banner */}
-        <div className="p-3.5 rounded-2xl bg-[#FEF7E7] border border-[#F4B942] space-y-2">
+        <div className="p-3.5 rounded-2xl bg-[#FEF7E7] border border-[#F4B942] space-y-2.5">
           <p className="text-[11px] font-bold text-stone-800 text-center">
-            ⚡ Instant 1-Click Demo Evaluation:
+            ⚡ Instant 1-Click Portal Access:
           </p>
           <div className="grid grid-cols-2 gap-2">
             <button
@@ -78,16 +85,23 @@ const LoginPage = ({ setActivePage }) => {
               onClick={handleQuickSeller}
               className="p-2 rounded-xl bg-[#176B3A] text-white text-[11px] font-bold hover:bg-[#12542D] transition-colors flex items-center justify-center gap-1 shadow-sm"
             >
-              <span>🌾 Producer (Nitin Imade)</span>
+              <span>🌾 Producer (Nitin)</span>
             </button>
             <button
               type="button"
               onClick={handleQuickBuyer}
               className="p-2 rounded-xl bg-[#F4B942] text-[#1F2937] text-[11px] font-bold hover:bg-[#E5A932] transition-colors flex items-center justify-center gap-1 shadow-sm"
             >
-              <span>🛒 Buyer (Aditya Shivale)</span>
+              <span>🛒 Buyer (Aditya)</span>
             </button>
           </div>
+          <button
+            type="button"
+            onClick={handleQuickAdmin}
+            className="w-full p-2 rounded-xl bg-gradient-to-r from-stone-900 to-stone-800 text-white text-[11px] font-bold hover:from-stone-800 hover:to-stone-700 transition-all flex items-center justify-center gap-1.5 shadow-sm border border-stone-700"
+          >
+            <span>👑 Admin Portal (Nitin Imade / Super Admin)</span>
+          </button>
         </div>
 
         {/* Role Toggle */}

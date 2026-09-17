@@ -26,6 +26,7 @@ import VoiceListingPage from './pages/VoiceListingPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import SettingsPage from './pages/SettingsPage';
+import AdminDashboardPage from './pages/admin/AdminDashboardPage';
 
 function AppContent() {
   const [activePage, setActivePage] = useState('home');
@@ -201,6 +202,10 @@ function AppContent() {
             setActivePage={setActivePage}
             onTrackOrder={handleTrackOrder}
           />
+        )}
+
+        {activePage === 'admin-dashboard' && (
+          <AdminDashboardPage setActivePage={setActivePage} />
         )}
       </main>
 

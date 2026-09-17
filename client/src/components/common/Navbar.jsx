@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   Menu, X, Search, ShoppingBag, Mic, User, LogOut, LayoutDashboard,
-  Store, Globe, ChevronDown, MapPin, Sparkles, PlusCircle
+  Store, Globe, ChevronDown, MapPin, Sparkles, PlusCircle, ShieldAlert, Shield
 } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import { useAuth } from '../../context/AuthContext';
@@ -10,7 +10,7 @@ import { useMarketplace } from '../../context/MarketplaceContext';
 
 const Navbar = ({ activePage, setActivePage, openVoiceModal }) => {
   const { lang, setLang, t } = useLanguage();
-  const { user, logout, isSeller } = useAuth();
+  const { user, logout, isSeller, isAdmin } = useAuth();
   const { itemCount } = useCart();
   const { setSearchQuery } = useMarketplace();
 
@@ -50,7 +50,14 @@ const Navbar = ({ activePage, setActivePage, openVoiceModal }) => {
             <span className="sm:hidden">🌾 Direct from Rural Villages</span>
           </div>
           
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <button
+              onClick={() => setActivePage('admin-dashboard')}
+              className="flex items-center gap-1 bg-[#F4B942]/20 hover:bg-[#F4B942] text-amber-200 hover:text-stone-900 px-2 py-0.5 rounded text-[10px] font-bold tracking-wide transition-colors border border-[#F4B942]/40"
+              title="Open Admin Dashboard (All Users & Telemetry)"
+            >
+              👑 Admin Portal
+            </button>
             <span className="hidden md:inline text-stone-200">
               📞 Kisan Helpline: 1800-233-4726
             </span>
@@ -193,10 +200,26 @@ const Navbar = ({ activePage, setActivePage, openVoiceModal }) => {
                     <div className="px-4 py-2 border-b border-stone-100">
                       <p className="text-xs font-bold text-stone-800">{user.name}</p>
                       <p className="text-[11px] text-stone-500 truncate">{user.email}</p>
-                      <span className="inline-block mt-1 px-2 py-0.5 rounded text-[9px] font-bold uppercase bg-[#E8F5ED] text-[#176B3A]">
-                        {user.role === 'seller' ? '🌾 Verified Seller' : '🛒 Verified Buyer'}
+                      <span className={`inline-block mt-1 px-2 py-0.5 rounded text-[9px] font-bold uppercase ${
+                        isAdmin
+                          ? 'bg-amber-100 text-amber-900 border border-amber-300'
+                          : user.role === 'seller'
+                          ? 'bg-[#E8F5ED] text-[#176B3A]'
+                          : 'bg-blue-50 text-blue-700'
+                      }`}>
+                        {isAdmin ? '👑 Super Admin' : user.role === 'seller' ? '🌾 Verified Seller' : '🛒 Verified Buyer'}
                       </span>
                     </div>
+
+                    {isAdmin && (
+                      <button
+                        onClick={() => setActivePage('admin-dashboard')}
+                        className="w-full px-4 py-2 text-left text-xs font-bold text-amber-950 bg-amber-50 hover:bg-amber-100 flex items-center gap-2 border-b border-amber-200"
+                      >
+                        <ShieldAlert className="w-3.5 h-3.5 text-amber-700" />
+                        👑 Admin Control Panel
+                      </button>
+                    )}
 
                     <button
                       onClick={() => setActivePage(isSeller ? 'seller-dashboard' : 'buyer-dashboard')}
@@ -289,8 +312,22 @@ const Navbar = ({ activePage, setActivePage, openVoiceModal }) => {
             </button>
           ))}
 
+          {/* Admin link if user is admin */}
+          {isAdmin && (
+            <button
+              onClick={() => setActivePage('admin-dashboard')}
+              className={`ml-auto text-xs font-bold flex items-center gap-1.5 px-3 py-1 rounded-lg border shadow-xs transition-all ${
+                activePage === 'admin-dashboard'
+                  ? 'bg-amber-400 text-stone-900 border-amber-500 font-extrabold shadow-sm'
+                  : 'bg-amber-100 hover:bg-amber-200 text-amber-950 border-amber-300'
+              }`}
+            >
+              👑 Admin Dashboard
+            </button>
+          )}
+
           {/* Quick link to Become a Seller if buyer/guest */}
-          {!isSeller && (
+          {!isAdmin && !isSeller && (
             <button
               onClick={() => setActivePage('become-seller')}
               className="ml-auto text-xs font-bold text-[#176B3A] hover:text-[#12542D] flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#E8F5ED] border border-[#176B3A]/20"
@@ -300,7 +337,7 @@ const Navbar = ({ activePage, setActivePage, openVoiceModal }) => {
             </button>
           )}
 
-          {isSeller && (
+          {!isAdmin && isSeller && (
             <button
               onClick={() => setActivePage('seller-dashboard')}
               className="ml-auto text-xs font-bold text-[#176B3A] hover:text-[#12542D] flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#E8F5ED] border border-[#176B3A]/20"
@@ -355,6 +392,15 @@ const Navbar = ({ activePage, setActivePage, openVoiceModal }) => {
 
           {/* Mobile Action Buttons */}
           <div className="pt-2 border-t border-stone-200 space-y-2">
+            {isAdmin && (
+              <button
+                onClick={() => { setActivePage('admin-dashboard'); setMobileMenuOpen(false); }}
+                className="w-full p-2.5 rounded-xl bg-amber-100 text-amber-950 border border-amber-300 font-bold text-xs flex items-center justify-center gap-2"
+              >
+                👑 Admin Dashboard (All Users)
+              </button>
+            )}
+
             <button
               onClick={() => { setActivePage(isSeller ? 'seller-dashboard' : 'buyer-dashboard'); setMobileMenuOpen(false); }}
               className="w-full btn-outline text-xs"

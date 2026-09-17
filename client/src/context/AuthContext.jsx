@@ -45,13 +45,27 @@ const DEMO_SELLER = {
   }
 };
 
+const DEMO_ADMIN = {
+  id: "user-admin-1",
+  name: "Nitin Imade",
+  email: "admin@gramsetu.in",
+  phone: "+91 98221 45091",
+  role: "admin",
+  status: "Active",
+  village: "Dindori",
+  district: "Nashik",
+  state: "Maharashtra",
+  avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+  title: "Super Administrator"
+};
+
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() => {
     try {
       const saved = localStorage.getItem('gramsetu_user');
-      return saved ? JSON.parse(saved) : DEMO_BUYER; // Default with logged in demo buyer for ease of testing!
+      return saved ? JSON.parse(saved) : DEMO_ADMIN; // Default with Admin access for immediate evaluation!
     } catch {
-      return DEMO_BUYER;
+      return DEMO_ADMIN;
     }
   });
 
@@ -73,7 +87,16 @@ export const AuthProvider = ({ children }) => {
     return DEMO_SELLER;
   };
 
+  const loginDemoAdmin = () => {
+    setUser(DEMO_ADMIN);
+    return DEMO_ADMIN;
+  };
+
   const login = async (email, password) => {
+    if (email.includes('admin')) {
+      setUser(DEMO_ADMIN);
+      return DEMO_ADMIN;
+    }
     if (email.includes('seller')) {
       setUser(DEMO_SELLER);
       return DEMO_SELLER;
@@ -146,9 +169,11 @@ export const AuthProvider = ({ children }) => {
         login,
         loginDemoBuyer,
         loginDemoSeller,
+        loginDemoAdmin,
         registerBuyer,
         registerSeller,
         logout,
+        isAdmin: user?.role === 'admin',
         isSeller: user?.role === 'seller',
         isBuyer: user?.role === 'buyer'
       }}
