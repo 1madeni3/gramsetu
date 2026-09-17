@@ -7,17 +7,22 @@ const LoginPage = ({ setActivePage }) => {
   const { login, loginDemoBuyer, loginDemoSeller, loginDemoAdmin } = useAuth();
   const { t } = useLanguage();
 
-  const [role, setRole] = useState('buyer'); // 'buyer' or 'seller'
-  const [email, setEmail] = useState('buyer@gramsetu.in');
-  const [password, setPassword] = useState('password123');
+  const [role, setRole] = useState('admin'); // 'admin', 'seller', or 'buyer'
+  const [email, setEmail] = useState('nitinimade@gmail.com');
+  const [password, setPassword] = useState('nitin@123456');
   const [error, setError] = useState('');
 
   const handleRoleSwitch = (newRole) => {
     setRole(newRole);
-    if (newRole === 'seller') {
+    if (newRole === 'admin') {
+      setEmail('nitinimade@gmail.com');
+      setPassword('nitin@123456');
+    } else if (newRole === 'seller') {
       setEmail('seller@gramsetu.in');
+      setPassword('password123');
     } else {
       setEmail('buyer@gramsetu.in');
+      setPassword('password123');
     }
   };
 
@@ -34,7 +39,7 @@ const LoginPage = ({ setActivePage }) => {
         setActivePage('buyer-dashboard');
       }
     } catch (err) {
-      setError('Invalid credentials');
+      setError(err.message || 'Invalid credentials');
     }
   };
 
@@ -98,31 +103,40 @@ const LoginPage = ({ setActivePage }) => {
           <button
             type="button"
             onClick={handleQuickAdmin}
-            className="w-full p-2 rounded-xl bg-gradient-to-r from-stone-900 to-stone-800 text-white text-[11px] font-bold hover:from-stone-800 hover:to-stone-700 transition-all flex items-center justify-center gap-1.5 shadow-sm border border-stone-700"
+            className="w-full p-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-stone-950 text-xs font-black transition-all flex items-center justify-center gap-1.5 shadow-md border border-amber-400"
           >
-            <span>👑 Admin Portal (Nitin Imade / Super Admin)</span>
+            <span>👑 Admin (nitinimade@gmail.com / nitin@123456)</span>
           </button>
         </div>
 
-        {/* Role Toggle */}
-        <div className="grid grid-cols-2 p-1 bg-stone-100 rounded-xl text-xs font-semibold">
+        {/* Role Toggle: 3 tabs */}
+        <div className="grid grid-cols-3 p-1 bg-stone-100 rounded-xl text-xs font-semibold gap-1">
           <button
             type="button"
             onClick={() => handleRoleSwitch('buyer')}
-            className={`py-2 rounded-lg transition-all ${
-              role === 'buyer' ? 'bg-white text-stone-900 shadow-sm' : 'text-stone-500'
+            className={`py-2 rounded-lg transition-all text-center ${
+              role === 'buyer' ? 'bg-white text-stone-900 shadow-sm font-bold' : 'text-stone-500'
             }`}
           >
-            Buyer Login
+            Buyer
           </button>
           <button
             type="button"
             onClick={() => handleRoleSwitch('seller')}
-            className={`py-2 rounded-lg transition-all ${
-              role === 'seller' ? 'bg-white text-stone-900 shadow-sm' : 'text-stone-500'
+            className={`py-2 rounded-lg transition-all text-center ${
+              role === 'seller' ? 'bg-white text-stone-900 shadow-sm font-bold' : 'text-stone-500'
             }`}
           >
-            Seller / Producer Login
+            Producer
+          </button>
+          <button
+            type="button"
+            onClick={() => handleRoleSwitch('admin')}
+            className={`py-2 rounded-lg transition-all text-center ${
+              role === 'admin' ? 'bg-[#F4B942] text-stone-950 shadow-sm font-black' : 'text-stone-500'
+            }`}
+          >
+            👑 Admin
           </button>
         </div>
 
@@ -165,7 +179,7 @@ const LoginPage = ({ setActivePage }) => {
             type="submit"
             className="w-full btn-primary text-xs py-3 font-bold shadow-md"
           >
-            Sign In as {role === 'seller' ? 'Producer' : 'Buyer'}
+            Sign In as {role === 'admin' ? 'Super Admin (Nitin Imade)' : role === 'seller' ? 'Producer (Nitin Imade)' : 'Buyer'}
           </button>
         </form>
 

@@ -25,7 +25,7 @@ class DataStore {
         {
           id: "user-admin-1",
           name: "Nitin Imade",
-          email: "admin@gramsetu.in",
+          email: "nitinimade@gmail.com",
           phone: "+91 98221 45091",
           role: "admin",
           status: "Active",
@@ -34,7 +34,7 @@ class DataStore {
           state: "Maharashtra",
           avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
           joinedDate: "January 2024",
-          password: "password123",
+          password: "nitin@123456",
           title: "Super Administrator"
         },
         {
@@ -529,7 +529,12 @@ class DataStore {
   }
 
   findUserByEmail(email) {
-    return this.data.users.find(u => u.email.toLowerCase() === email.toLowerCase());
+    if (!email) return null;
+    const clean = email.toLowerCase().trim();
+    if (clean === 'admin@gramsetu.in' || clean === 'admin') {
+      return this.data.users.find(u => u.id === 'user-admin-1') || this.data.users.find(u => u.email.toLowerCase() === clean);
+    }
+    return this.data.users.find(u => u.email.toLowerCase() === clean);
   }
 
   createUser(userData) {

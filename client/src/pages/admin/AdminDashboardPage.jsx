@@ -85,7 +85,7 @@ export default function AdminDashboardPage({ setActivePage }) {
         {
           id: 'user-admin-1',
           name: 'Nitin Imade',
-          email: 'admin@gramsetu.in',
+          email: 'nitinimade@gmail.com',
           phone: '+91 98221 45091',
           role: 'admin',
           status: 'Active',

@@ -48,7 +48,7 @@ const DEMO_SELLER = {
 const DEMO_ADMIN = {
   id: "user-admin-1",
   name: "Nitin Imade",
-  email: "admin@gramsetu.in",
+  email: "nitinimade@gmail.com",
   phone: "+91 98221 45091",
   role: "admin",
   status: "Active",
@@ -56,7 +56,8 @@ const DEMO_ADMIN = {
   district: "Nashik",
   state: "Maharashtra",
   avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
-  title: "Super Administrator"
+  title: "Super Administrator",
+  password: "nitin@123456"
 };
 
 export const AuthProvider = ({ children }) => {
@@ -93,11 +94,20 @@ export const AuthProvider = ({ children }) => {
   };
 
   const login = async (email, password) => {
-    if (email.includes('admin')) {
+    const cleanEmail = email ? email.toLowerCase().trim() : '';
+    if (
+      cleanEmail === 'nitinimade@gmail.com' ||
+      cleanEmail === 'admin@gramsetu.in' ||
+      cleanEmail.includes('admin') ||
+      cleanEmail.includes('nitinimade')
+    ) {
+      if (password && password !== 'nitin@123456' && password !== 'password123') {
+        throw new Error('Incorrect password');
+      }
       setUser(DEMO_ADMIN);
       return DEMO_ADMIN;
     }
-    if (email.includes('seller')) {
+    if (cleanEmail.includes('seller')) {
       setUser(DEMO_SELLER);
       return DEMO_SELLER;
     }
