@@ -32,7 +32,7 @@ const Navbar = ({ activePage, setActivePage, openVoiceModal }) => {
     { id: 'marketplace', label: t('marketplace') },
     { id: 'categories', label: t('categories') },
     { id: 'near-you', label: t('nearYou') },
-    { id: 'admin-dashboard', label: '👑 Admin Portal' },
+    ...(isAdmin ? [{ id: 'admin-dashboard', label: '👑 Admin Portal' }] : []),
     { id: 'how-it-works', label: t('howItWorks') },
     { id: 'about', label: t('about') },
     { id: 'contact', label: t('contact') }
@@ -44,21 +44,22 @@ const Navbar = ({ activePage, setActivePage, openVoiceModal }) => {
       <div className="bg-[#176B3A] text-white text-[11px] font-medium py-1.5 px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* Prominent High-Contrast Admin Portal Button */}
-            <button
-              onClick={() => setActivePage('admin-dashboard')}
-              className="flex items-center gap-1.5 bg-[#F4B942] hover:bg-amber-300 text-stone-950 font-black text-xs px-3 py-0.5 rounded-full shadow-md border border-amber-500 cursor-pointer active:scale-95 transition-all"
-              title="Admin Dashboard: View All Users, Sellers & Telemetry"
-            >
-              <span>👑</span>
-              <span className="tracking-tight uppercase text-[11px]">Admin Portal</span>
-            </button>
+            {/* Admin Portal Button - EXCLUSIVELY FOR AUTHENTICATED NITIN IMADE */}
+            {isAdmin && (
+              <button
+                onClick={() => setActivePage('admin-dashboard')}
+                className="flex items-center gap-1.5 bg-[#F4B942] hover:bg-amber-300 text-stone-950 font-black text-xs px-3 py-0.5 rounded-full shadow-md border border-amber-500 cursor-pointer active:scale-95 transition-all"
+                title="Admin Dashboard (Authorized: Nitin Imade)"
+              >
+                <span>👑</span>
+                <span className="tracking-tight uppercase text-[11px]">Admin Portal</span>
+              </button>
+            )}
 
-            <span className="bg-[#F4B942] text-[#1F2937] font-bold text-[9px] uppercase px-1.5 py-0.5 rounded hidden sm:inline">
+            <span className="bg-[#F4B942] text-[#1F2937] font-bold text-[9px] uppercase px-1.5 py-0.5 rounded">
               Direct Rural Trade
             </span>
-            <span className="hidden lg:inline">🌾 {t('zeroMiddlemen')}</span>
-            <span className="hidden sm:inline lg:hidden">🌾 Direct Rural</span>
+            <span className="hidden sm:inline">🌾 {t('zeroMiddlemen')}</span>
           </div>
           
           <div className="flex items-center gap-3 sm:gap-4">
@@ -175,19 +176,21 @@ const Navbar = ({ activePage, setActivePage, openVoiceModal }) => {
               )}
             </button>
 
-            {/* Always Visible Admin Access Button */}
-            <button
-              onClick={() => setActivePage('admin-dashboard')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold text-xs shadow-sm transition-all border ${
-                activePage === 'admin-dashboard'
-                  ? 'bg-amber-400 text-stone-900 border-amber-500 ring-2 ring-amber-300 font-extrabold'
-                  : 'bg-amber-50 hover:bg-amber-100 text-amber-900 border-amber-300'
-              }`}
-              title="Open Admin Dashboard (View All Users & Data)"
-            >
-              <span>👑</span>
-              <span className="hidden sm:inline">Admin</span>
-            </button>
+            {/* Admin Access Button - ONLY FOR AUTHENTICATED NITIN IMADE */}
+            {isAdmin && (
+              <button
+                onClick={() => setActivePage('admin-dashboard')}
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-bold text-xs shadow-sm transition-all border ${
+                  activePage === 'admin-dashboard'
+                    ? 'bg-amber-400 text-stone-900 border-amber-500 ring-2 ring-amber-300 font-extrabold'
+                    : 'bg-amber-50 hover:bg-amber-100 text-amber-900 border-amber-300'
+                }`}
+                title="Admin Dashboard (Authorized: Nitin Imade)"
+              >
+                <span>👑</span>
+                <span className="hidden sm:inline">Admin</span>
+              </button>
+            )}
 
             {/* Auth Dropdown / Buttons */}
             {user ? (

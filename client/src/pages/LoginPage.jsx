@@ -3,20 +3,21 @@ import { ArrowLeft, User, Lock, Store, ArrowRight, ShieldCheck, CheckCircle2 } f
 import { useAuth } from '../context/AuthContext';
 import { useLanguage } from '../context/LanguageContext';
 
-const LoginPage = ({ setActivePage }) => {
-  const { login, loginDemoBuyer, loginDemoSeller, loginDemoAdmin } = useAuth();
+const LoginPage = ({ setActivePage, adminRedirectReason }) => {
+  const { login, loginDemoBuyer, loginDemoSeller } = useAuth();
   const { t } = useLanguage();
 
-  const [role, setRole] = useState('admin'); // 'admin', 'seller', or 'buyer'
-  const [email, setEmail] = useState('nitinimade@gmail.com');
-  const [password, setPassword] = useState('nitin@123456');
+  const [role, setRole] = useState(adminRedirectReason ? 'admin' : 'buyer');
+  const [email, setEmail] = useState(adminRedirectReason ? 'nitinimade@gmail.com' : 'buyer@gramsetu.in');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
   const handleRoleSwitch = (newRole) => {
     setRole(newRole);
+    setError('');
     if (newRole === 'admin') {
       setEmail('nitinimade@gmail.com');
-      setPassword('nitin@123456');
+      setPassword('');
     } else if (newRole === 'seller') {
       setEmail('seller@gramsetu.in');
       setPassword('password123');
@@ -29,6 +30,19 @@ const LoginPage = ({ setActivePage }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+
+    // Strict validation for admin
+    if (role === 'admin' || email.toLowerCase().trim() === 'nitinimade@gmail.com') {
+      if (email.toLowerCase().trim() !== 'nitinimade@gmail.com') {
+        setError('Access Denied: Only Nitin Imade (nitinimade@gmail.com) is authorized to access the Admin Portal.');
+        return;
+      }
+      if (password !== 'nitin@123456') {
+        setError('Incorrect Admin password. Access is restricted exclusively to Nitin Imade.');
+        return;
+      }
+    }
+
     try {
       const loggedIn = await login(email, password);
       if (loggedIn.role === 'admin') {
@@ -53,11 +67,6 @@ const LoginPage = ({ setActivePage }) => {
     setActivePage('seller-dashboard');
   };
 
-  const handleQuickAdmin = () => {
-    loginDemoAdmin();
-    setActivePage('admin-dashboard');
-  };
-
   return (
     <div className="max-w-md mx-auto px-4 py-12 space-y-6">
       <button
@@ -79,10 +88,17 @@ const LoginPage = ({ setActivePage }) => {
           </p>
         </div>
 
-        {/* 1-Click Quick Demo Access Banner */}
-        <div className="p-3.5 rounded-2xl bg-[#FEF7E7] border border-[#F4B942] space-y-2.5">
+        {adminRedirectReason && (
+          <div className="p-3 rounded-2xl bg-amber-50 border border-amber-300 text-amber-900 text-xs font-semibold text-center flex items-center gap-2">
+            <span className="text-base">🔒</span>
+            <span>{adminRedirectReason}</span>
+          </div>
+        )}
+
+        {/* Quick Demo Access for Public Roles (Buyer & Producer) */}
+        <div className="p-3.5 rounded-2xl bg-[#FEF7E7] border border-[#F4B942] space-y-2">
           <p className="text-[11px] font-bold text-stone-800 text-center">
-            ⚡ Instant 1-Click Portal Access:
+            ⚡ Quick Portal Access (Public Roles):
           </p>
           <div className="grid grid-cols-2 gap-2">
             <button
@@ -90,7 +106,7 @@ const LoginPage = ({ setActivePage }) => {
               onClick={handleQuickSeller}
               className="p-2 rounded-xl bg-[#176B3A] text-white text-[11px] font-bold hover:bg-[#12542D] transition-colors flex items-center justify-center gap-1 shadow-sm"
             >
-              <span>🌾 Producer (Nitin)</span>
+              <span>🌾 Producer (Sahyadri FPC)</span>
             </button>
             <button
               type="button"
@@ -100,13 +116,9 @@ const LoginPage = ({ setActivePage }) => {
               <span>🛒 Buyer (Aditya)</span>
             </button>
           </div>
-          <button
-            type="button"
-            onClick={handleQuickAdmin}
-            className="w-full p-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-stone-950 text-xs font-black transition-all flex items-center justify-center gap-1.5 shadow-md border border-amber-400"
-          >
-            <span>👑 Admin (nitinimade@gmail.com / nitin@123456)</span>
-          </button>
+          <p className="text-[10px] text-stone-500 text-center italic">
+            🔒 Admin Portal is restricted exclusively to Nitin Imade. Password verification is mandatory.
+          </p>
         </div>
 
         {/* Role Toggle: 3 tabs */}
@@ -162,11 +174,19 @@ const LoginPage = ({ setActivePage }) => {
           </div>
 
           <div>
-            <label className="block font-semibold text-stone-700 mb-1">Password</label>
+            <div className="flex items-center justify-between mb-1">
+              <label className="block font-semibold text-stone-700">Password</label>
+              {role === 'admin' && (
+                <span className="text-[10px] text-amber-700 font-bold bg-amber-100 px-1.5 py-0.5 rounded">
+                  Authorized Nitin Imade Password
+                </span>
+              )}
+            </div>
             <div className="relative">
               <input
                 type="password"
                 value={password}
+                placeholder={role === 'admin' ? 'Enter admin password' : '••••••••'}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#176B3A]"
                 required

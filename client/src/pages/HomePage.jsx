@@ -114,7 +114,7 @@ const HomePage = ({ setActivePage, onViewDetails, openVoiceModal }) => {
                       />
                       <div>
                         <div className="flex items-center gap-1.5">
-                          <h4 className="font-display font-bold text-xs text-stone-900">Nitin Imade Kisan Sahakari</h4>
+                          <h4 className="font-display font-bold text-xs text-stone-900">Sahyadri Jaivik Kisan Utpadak FPC</h4>
                           <VerifiedBadge size="sm" />
                         </div>
                         <p className="text-[11px] text-stone-500">Nashik, Maharashtra • Organic Wheat</p>

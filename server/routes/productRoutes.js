@@ -48,7 +48,7 @@ router.post('/', (req, res) => {
       district: district || 'Nashik',
       state: state || 'Maharashtra',
       sellerId: sellerId || 'seller-1',
-      sellerName: sellerName || 'Nitin Imade Kisan Sahakari Group',
+      sellerName: sellerName || 'Sahyadri Jaivik Kisan Utpadak FPC',
       deliveryInfo: deliveryInfo || 'Dispatched directly from village farm within 24 hours.',
       images: images && images.length ? images : ['https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80']
     });

@@ -192,7 +192,7 @@ const OrderTrackingPage = ({ orderId, setActivePage }) => {
                     />
                     <div>
                       <p className="font-bold text-stone-800">{item.name}</p>
-                      <p className="text-[11px] text-stone-500">Seller: {item.sellerName || "Nitin Imade Kisan Sahakari"}</p>
+                      <p className="text-[11px] text-stone-500">Seller: {item.sellerName || "Sahyadri Jaivik Kisan Utpadak FPC"}</p>
                     </div>
                   </div>
                   <div className="text-right">

@@ -80,7 +80,7 @@ const SellerDashboardPage = ({ setActivePage, openVoiceModal, defaultTab = 'over
       deliveryInfo: newProductForm.deliveryInfo,
       isOrganic: newProductForm.isOrganic,
       sellerId: user?.sellerId || 'seller-1',
-      sellerName: user?.sellerProfile?.name || user?.name || 'Nitin Imade Kisan Sahakari Group',
+      sellerName: user?.sellerProfile?.name || user?.name || 'Sahyadri Jaivik Kisan Utpadak FPC',
       images: [imageMap[newProductForm.imageOption] || imageMap.wheat]
     });
 
@@ -148,7 +148,7 @@ const SellerDashboardPage = ({ setActivePage, openVoiceModal, defaultTab = 'over
               <VerifiedBadge size="sm" />
             </div>
             <p className="text-xs text-stone-500 mt-0.5">
-              Logged in as: <strong className="text-stone-800">{user?.sellerProfile?.name || user?.name || "Nitin Imade Kisan Sahakari"}</strong> • 📍 {user?.village || "Dindori"}, {user?.district || "Nashik"}
+              Logged in as: <strong className="text-stone-800">{user?.sellerProfile?.name || user?.name || "Sahyadri Jaivik Kisan Utpadak FPC"}</strong> • 📍 {user?.village || "Dindori"}, {user?.district || "Nashik"}
             </p>
           </div>
 

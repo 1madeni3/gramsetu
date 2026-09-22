@@ -16,7 +16,7 @@ export const CartProvider = ({ children }) => {
           unit: "kg",
           quantity: 20,
           sellerId: "seller-1",
-          sellerName: "Nitin Imade Kisan Sahakari Group",
+          sellerName: "Sahyadri Jaivik Kisan Utpadak FPC",
           village: "Dindori",
           district: "Nashik",
           state: "Maharashtra",

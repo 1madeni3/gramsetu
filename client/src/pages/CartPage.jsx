@@ -80,7 +80,7 @@ const CartPage = ({ setActivePage, onViewDetails }) => {
                   </h3>
                   <p className="text-xs text-stone-500 flex items-center justify-center sm:justify-start gap-1">
                     <Store className="w-3 h-3 text-[#176B3A]" />
-                    <span>{item.sellerName || "Nitin Imade Kisan Sahakari"}</span>
+                    <span>{item.sellerName || "Sahyadri Jaivik Kisan Utpadak FPC"}</span>
                   </p>
                   <p className="text-[11px] text-stone-400">
                     📍 {item.village}, {item.district}

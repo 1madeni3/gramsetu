@@ -35,8 +35,29 @@ import { useAuth } from '../../context/AuthContext';
 import { useMarketplace } from '../../context/MarketplaceContext';
 
 export default function AdminDashboardPage({ setActivePage }) {
-  const { user, loginDemoAdmin } = useAuth();
+  const { user } = useAuth();
   const { products, sellers, orders } = useMarketplace();
+
+  // Strict Security Guard: Only Nitin Imade (nitinimade@gmail.com) can access the Admin Dashboard
+  if (!user || user.email?.toLowerCase() !== 'nitinimade@gmail.com') {
+    return (
+      <div className="max-w-md mx-auto my-20 p-8 bg-white rounded-3xl border border-stone-200 shadow-xl text-center space-y-4">
+        <div className="w-16 h-16 bg-amber-100 text-stone-900 rounded-full flex items-center justify-center mx-auto text-2xl border border-amber-300">
+          🔒
+        </div>
+        <h2 className="text-xl font-display font-extrabold text-stone-900">Restricted Admin Access</h2>
+        <p className="text-xs text-stone-600 leading-relaxed">
+          Access to this dashboard is private and strictly restricted to <strong>Nitin Imade</strong> (<code>nitinimade@gmail.com</code>).
+        </p>
+        <button
+          onClick={() => setActivePage('login')}
+          className="w-full btn-primary text-xs py-3 font-bold"
+        >
+          Sign In with Admin Credentials
+        </button>
+      </div>
+    );
+  }
 
   // State
   const [activeTab, setActiveTab] = useState('users'); // 'users' | 'sellers' | 'products' | 'orders' | 'diagnostics'

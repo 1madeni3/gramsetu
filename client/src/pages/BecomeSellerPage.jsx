@@ -171,7 +171,7 @@ const BecomeSellerPage = ({ setActivePage }) => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="e.g. Nitin Imade Kisan Sahakari Group or Siddhesh Kumbhar Crafts"
+                    placeholder="e.g. Sahyadri Jaivik Kisan Utpadak FPC or MatiShilp Heritage Terracotta"
                     className="w-full p-2.5 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#176B3A]"
                     required
                   />

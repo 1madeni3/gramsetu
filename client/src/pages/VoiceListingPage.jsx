@@ -141,7 +141,7 @@ const VoiceListingPage = ({ setActivePage }) => {
     addNewProduct({
       ...extractedData,
       sellerId: user?.sellerId || 'seller-1',
-      sellerName: user?.sellerProfile?.name || user?.name || 'Nitin Imade Kisan Sahakari Group'
+      sellerName: user?.sellerProfile?.name || user?.name || 'Sahyadri Jaivik Kisan Utpadak FPC'
     });
     setIsPublished(true);
     try {

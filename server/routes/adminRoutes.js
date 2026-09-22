@@ -3,6 +3,18 @@ import { store } from '../db/store.js';
 
 const router = express.Router();
 
+// Admin authorization guard: Restricted exclusively to Nitin Imade
+router.use((req, res, next) => {
+  const adminEmail = req.headers['x-admin-email'] || req.query.admin_email;
+  if (adminEmail && adminEmail.toLowerCase().trim() !== 'nitinimade@gmail.com') {
+    return res.status(403).json({
+      success: false,
+      message: 'Access Denied: Only Nitin Imade (nitinimade@gmail.com) has access to the Admin Portal.'
+    });
+  }
+  next();
+});
+
 // GET all users (with optional filtering: role, search, status, state)
 router.get('/users', (req, res) => {
   try {

@@ -15,8 +15,21 @@ router.post('/login', (req, res) => {
     return res.status(401).json({ success: false, message: 'Invalid credentials. Try sample accounts below!' });
   }
 
-  // In demo prototype, compare password
-  if (password && user.password && user.password !== password) {
+  // For Admin role: STRICTLY enforce Nitin Imade credentials
+  if (user.role === 'admin') {
+    if (user.email.toLowerCase().trim() !== 'nitinimade@gmail.com') {
+      return res.status(403).json({
+        success: false,
+        message: 'Access Denied: Only Nitin Imade (nitinimade@gmail.com) is authorized for Admin access.'
+      });
+    }
+    if (password !== 'nitin@123456') {
+      return res.status(401).json({
+        success: false,
+        message: 'Incorrect Admin password. Access is restricted exclusively to Nitin Imade.'
+      });
+    }
+  } else if (password && user.password && user.password !== password) {
     return res.status(401).json({ success: false, message: 'Incorrect password' });
   }
 

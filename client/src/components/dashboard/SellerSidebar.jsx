@@ -32,7 +32,7 @@ const SellerSidebar = ({ currentTab, setCurrentTab, setActivePage, openVoiceModa
           </div>
           <div className="min-w-0 flex-1">
             <h4 className="font-bold text-xs text-stone-900 truncate">
-              {user?.sellerProfile?.name || user?.name || "Nitin Imade Kisan Sahakari"}
+              {user?.sellerProfile?.name || user?.name || "Sahyadri Jaivik Kisan Utpadak FPC"}
             </h4>
             <span className="inline-flex items-center gap-1 text-[10px] text-[#176B3A] font-semibold">
               ✓ Verified Producer

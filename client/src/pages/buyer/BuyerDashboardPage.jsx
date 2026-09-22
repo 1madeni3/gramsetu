@@ -177,7 +177,7 @@ const BuyerDashboardPage = ({ setActivePage, onTrackOrder }) => {
                             <div>
                               <h4 className="font-bold text-stone-800">{item.name}</h4>
                               <p className="text-[11px] text-stone-500">
-                                Seller: {item.sellerName || "Nitin Imade Kisan Sahakari Group"}
+                                Seller: {item.sellerName || "Sahyadri Jaivik Kisan Utpadak FPC"}
                               </p>
                             </div>
                           </div>
@@ -235,7 +235,7 @@ const BuyerDashboardPage = ({ setActivePage, onTrackOrder }) => {
                   className="w-12 h-12 rounded-full object-cover border-2 border-[#176B3A]"
                 />
                 <div>
-                  <h4 className="font-bold text-xs text-stone-900">Nitin Imade Kisan Sahakari Group</h4>
+                  <h4 className="font-bold text-xs text-stone-900">Sahyadri Jaivik Kisan Utpadak FPC</h4>
                   <p className="text-[11px] text-stone-500">Dindori, Nashik • Sharbati Wheat, Tomatoes</p>
                   <span className="text-[10px] font-bold text-[#176B3A]">✓ Verified Producer</span>
                 </div>

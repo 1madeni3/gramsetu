@@ -290,7 +290,7 @@ const VoiceListingModal = ({ isOpen, onClose, onProductCreated }) => {
     const finalProduct = {
       ...extractedData,
       sellerId: user?.sellerId || 'seller-1',
-      sellerName: user?.sellerProfile?.name || user?.name || 'Nitin Imade Kisan Sahakari Group',
+      sellerName: user?.sellerProfile?.name || user?.name || 'Sahyadri Jaivik Kisan Utpadak FPC',
       village: extractedData.village || user?.village || 'Dindori',
       district: extractedData.district || user?.district || 'Nashik',
       state: extractedData.state || user?.state || 'Maharashtra'

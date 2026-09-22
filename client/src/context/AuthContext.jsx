@@ -27,7 +27,7 @@ const DEMO_SELLER = {
   state: "Maharashtra",
   sellerProfile: {
     id: "seller-1",
-    name: "Nitin Imade Kisan Sahakari Group",
+    name: "Sahyadri Jaivik Kisan Utpadak FPC",
     contactPerson: "Nitin Imade",
     phone: "+91 98221 45091",
     email: "nitin.imade@gramsetu.in",
@@ -64,9 +64,9 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() => {
     try {
       const saved = localStorage.getItem('gramsetu_user');
-      return saved ? JSON.parse(saved) : DEMO_ADMIN; // Default with Admin access for immediate evaluation!
+      return saved ? JSON.parse(saved) : null; // Default to guest (safe and unprivileged)
     } catch {
-      return DEMO_ADMIN;
+      return null;
     }
   });
 
@@ -88,32 +88,31 @@ export const AuthProvider = ({ children }) => {
     return DEMO_SELLER;
   };
 
-  const loginDemoAdmin = () => {
-    setUser(DEMO_ADMIN);
-    return DEMO_ADMIN;
-  };
-
   const login = async (email, password) => {
     const cleanEmail = email ? email.toLowerCase().trim() : '';
-    if (
-      cleanEmail === 'nitinimade@gmail.com' ||
-      cleanEmail === 'admin@gramsetu.in' ||
-      cleanEmail.includes('admin') ||
-      cleanEmail.includes('nitinimade')
-    ) {
-      if (password && password !== 'nitin@123456' && password !== 'password123') {
-        throw new Error('Incorrect password');
+
+    // Admin login: STRICTLY restricted to Nitin Imade
+    if (cleanEmail === 'nitinimade@gmail.com') {
+      if (password !== 'nitin@123456') {
+        throw new Error('Incorrect password. Please enter valid password for Nitin Imade.');
       }
       setUser(DEMO_ADMIN);
       return DEMO_ADMIN;
     }
-    if (cleanEmail.includes('seller')) {
+
+    // Reject any other email claiming to be admin
+    if (cleanEmail.includes('admin') || cleanEmail.includes('nitin')) {
+      throw new Error('Access Denied: Admin Portal is restricted exclusively to Nitin Imade (nitinimade@gmail.com).');
+    }
+
+    if (cleanEmail === 'seller@gramsetu.in' || cleanEmail.includes('seller')) {
       setUser(DEMO_SELLER);
       return DEMO_SELLER;
     }
+
     const buyerUser = {
       ...DEMO_BUYER,
-      email
+      email: cleanEmail || DEMO_BUYER.email
     };
     setUser(buyerUser);
     return buyerUser;
@@ -179,11 +178,11 @@ export const AuthProvider = ({ children }) => {
         login,
         loginDemoBuyer,
         loginDemoSeller,
-        loginDemoAdmin,
         registerBuyer,
         registerSeller,
         logout,
-        isAdmin: user?.role === 'admin',
+        isAdmin: user?.role === 'admin' && user?.email?.toLowerCase() === 'nitinimade@gmail.com',
+        isSuperAdmin: user?.role === 'admin' && user?.email?.toLowerCase() === 'nitinimade@gmail.com',
         isSeller: user?.role === 'seller',
         isBuyer: user?.role === 'buyer'
       }}

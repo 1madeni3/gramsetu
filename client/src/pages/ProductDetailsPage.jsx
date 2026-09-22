@@ -37,7 +37,7 @@ const ProductDetailsPage = ({ product, setActivePage, onSelectSeller }) => {
 
   const seller = sellers.find(s => s.id === product.sellerId) || {
     id: product.sellerId || "seller-1",
-    name: product.sellerName || "Nitin Imade Kisan Sahakari Group",
+    name: product.sellerName || "Sahyadri Jaivik Kisan Utpadak FPC",
     village: product.village || "Dindori",
     district: product.district || "Nashik",
     state: product.state || "Maharashtra",
