@@ -131,7 +131,7 @@ const ContactPage = ({ setActivePage }) => {
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="e.g. Nitin Imade or Aditya Shivale"
+                    placeholder="e.g. Ramrao Patil or Aniket Deshmukh"
                     className="w-full p-2.5 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#176B3A]"
                     required
                   />

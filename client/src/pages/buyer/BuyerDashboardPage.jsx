@@ -62,7 +62,7 @@ const BuyerDashboardPage = ({ setActivePage, onTrackOrder }) => {
               {currentTab === 'settings' && "Account Settings"}
             </h1>
             <p className="text-xs text-stone-500 mt-0.5">
-              Welcome back, <strong className="text-stone-800">{user?.name || "Aditya Shivale"}</strong>
+              Welcome back, <strong className="text-stone-800">{user?.name || "Aniket Deshmukh"}</strong>
             </p>
           </div>
 
@@ -231,7 +231,7 @@ const BuyerDashboardPage = ({ setActivePage, onTrackOrder }) => {
               <div className="flex items-center gap-3">
                 <img
                   src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80"
-                  alt="Nitin Imade"
+                  alt="Ramrao Patil"
                   className="w-12 h-12 rounded-full object-cover border-2 border-[#176B3A]"
                 />
                 <div>
@@ -257,7 +257,7 @@ const BuyerDashboardPage = ({ setActivePage, onTrackOrder }) => {
               {currentTab === 'addresses' ? "Delivery Addresses" : "Account Information"}
             </h3>
             <div className="p-4 bg-stone-50 rounded-2xl border border-stone-200 text-xs space-y-1">
-              <p className="font-bold text-stone-800">{user?.name || "Aditya Shivale"}</p>
+              <p className="font-bold text-stone-800">{user?.name || "Aniket Deshmukh"}</p>
               <p className="text-stone-600">{user?.phone || "+91 98200 12345"}</p>
               <p className="text-stone-600">{user?.address || "Flat 402, Green View Society, Gangapur Road, Nashik 422013"}</p>
               <p className="text-[11px] text-[#176B3A] font-semibold mt-1">Default Address for Rural Express</p>

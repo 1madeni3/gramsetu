@@ -133,7 +133,7 @@ const HomePage = ({ setActivePage, onViewDetails, openVoiceModal }) => {
                     🧺
                   </div>
                   <div className="text-left">
-                    <p className="text-[11px] font-bold text-stone-900">Siddhesh Kumbhar Kendra</p>
+                    <p className="text-[11px] font-bold text-stone-900">MatiShilp Terracotta Studio</p>
                     <p className="text-[10px] text-stone-500">Handmade Bamboo Crafts</p>
                     <div className="flex items-center text-[#F4B942] text-[10px] font-bold mt-0.5">
                       ★ 4.9 (89 verified buyers)
@@ -449,11 +449,11 @@ const HomePage = ({ setActivePage, onViewDetails, openVoiceModal }) => {
             <div className="flex items-center gap-3">
               <img
                 src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80"
-                alt="Nitin Imade"
+                alt="Ramrao Patil"
                 className="w-12 h-12 rounded-full object-cover border-2 border-[#176B3A]"
               />
               <div>
-                <h4 className="font-bold text-sm text-stone-900">Nitin Imade</h4>
+                <h4 className="font-bold text-sm text-stone-900">Ramrao Patil</h4>
                 <p className="text-xs text-stone-500">Wheat & Vegetable Farmer • Dindori, Nashik</p>
               </div>
             </div>
@@ -470,11 +470,11 @@ const HomePage = ({ setActivePage, onViewDetails, openVoiceModal }) => {
             <div className="flex items-center gap-3">
               <img
                 src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=400&q=80"
-                alt="Unnati Pawar"
+                alt="Govindbhai Rabari"
                 className="w-12 h-12 rounded-full object-cover border-2 border-[#176B3A]"
               />
               <div>
-                <h4 className="font-bold text-sm text-stone-900">Unnati Pawar</h4>
+                <h4 className="font-bold text-sm text-stone-900">Govindbhai Rabari</h4>
                 <p className="text-xs text-stone-500">Gramin Dairy Producer • Mogri, Anand</p>
               </div>
             </div>

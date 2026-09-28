@@ -186,7 +186,7 @@ const BecomeSellerPage = ({ setActivePage }) => {
                     name="contactPerson"
                     value={formData.contactPerson}
                     onChange={handleChange}
-                    placeholder="e.g. Nitin Imade"
+                    placeholder="e.g. Ramrao Patil"
                     className="w-full p-2.5 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#176B3A]"
                   />
                 </div>

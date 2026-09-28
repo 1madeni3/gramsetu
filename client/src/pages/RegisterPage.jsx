@@ -52,7 +52,7 @@ const RegisterPage = ({ setActivePage }) => {
               type="text"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              placeholder="e.g. Aditya Shivale"
+              placeholder="e.g. Aniket Deshmukh"
               className="w-full p-2.5 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#176B3A]"
               required
             />
@@ -64,7 +64,7 @@ const RegisterPage = ({ setActivePage }) => {
               type="email"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              placeholder="aditya.shivale@gramsetu.in"
+              placeholder="aniket.deshmukh@gmail.com"
               className="w-full p-2.5 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#176B3A]"
               required
             />

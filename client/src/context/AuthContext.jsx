@@ -4,8 +4,8 @@ const AuthContext = createContext();
 
 const DEMO_BUYER = {
   id: "user-buyer-1",
-  name: "Aditya Shivale",
-  email: "aditya.shivale@gramsetu.in",
+  name: "Aniket Deshmukh",
+  email: "aniket.deshmukh@gmail.com",
   phone: "+91 98200 12345",
   role: "buyer",
   village: "Gangapur",
@@ -17,8 +17,8 @@ const DEMO_BUYER = {
 
 const DEMO_SELLER = {
   id: "user-seller-1",
-  name: "Nitin Imade",
-  email: "nitin.imade@gramsetu.in",
+  name: "Ramrao Patil",
+  email: "ramrao.patil@gramsetu.in",
   phone: "+91 98221 45091",
   role: "seller",
   sellerId: "seller-1",
@@ -28,9 +28,9 @@ const DEMO_SELLER = {
   sellerProfile: {
     id: "seller-1",
     name: "Sahyadri Jaivik Kisan Utpadak FPC",
-    contactPerson: "Nitin Imade",
+    contactPerson: "Ramrao Patil",
     phone: "+91 98221 45091",
-    email: "nitin.imade@gramsetu.in",
+    email: "ramrao.patil@gramsetu.in",
     village: "Dindori",
     district: "Nashik",
     state: "Maharashtra",
@@ -39,7 +39,7 @@ const DEMO_SELLER = {
     productsCount: 14,
     isVerified: true,
     joinedDate: "January 2024",
-    bio: "Led by Nitin Imade, traditional organic farmers growing heritage Sharbati wheat, onions, and field-fresh table tomatoes without synthetic fertilizers.",
+    bio: "Led by Ramrao Patil, traditional organic farmers growing heritage Sharbati wheat, onions, and field-fresh table tomatoes without synthetic fertilizers.",
     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
     badges: ["Top Rated Farmer", "Zero-Middlemen Certified", "Kisan Mitra"]
   }

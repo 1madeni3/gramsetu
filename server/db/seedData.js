@@ -77,9 +77,9 @@ export const initialSellers = [
   {
     id: "seller-1",
     name: "Sahyadri Jaivik Kisan Utpadak FPC",
-    contactPerson: "Nitin Imade",
+    contactPerson: "Ramrao Patil",
     phone: "+91 98221 45091",
-    email: "nitin.imade@gramsetu.in",
+    email: "ramrao.patil@gramsetu.in",
     village: "Dindori",
     district: "Nashik",
     state: "Maharashtra",
@@ -88,16 +88,16 @@ export const initialSellers = [
     productsCount: 14,
     isVerified: true,
     joinedDate: "January 2024",
-    bio: "Led by Nitin Imade, multi-generation traditional organic farmers growing heritage Sharbati wheat, onions, and field-fresh table tomatoes without synthetic fertilizers.",
+    bio: "Led by veteran farmer Ramrao Patil, multi-generation traditional organic farmers growing heritage Sharbati wheat, onions, and field-fresh table tomatoes without synthetic fertilizers.",
     avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
     badges: ["Top Rated Farmer", "Zero-Middlemen Certified", "Kisan Mitra"]
   },
   {
     id: "seller-2",
     name: "MatiShilp Heritage Terracotta & Art Studio",
-    contactPerson: "Siddhesh Kumbhar",
+    contactPerson: "Kashinath Kumbhar",
     phone: "+91 94310 82711",
-    email: "siddhesh.kumbhar@gramsetu.in",
+    email: "kashinath.kumbhar@gramsetu.in",
     village: "Ranti",
     district: "Madhubani",
     state: "Bihar",
@@ -106,16 +106,16 @@ export const initialSellers = [
     productsCount: 9,
     isVerified: true,
     joinedDate: "March 2024",
-    bio: "Master rural artisan Siddhesh Kumbhar leading 35 village artisans in traditional terracotta pottery, cane bamboo weaving, and eco-friendly handicrafts.",
+    bio: "Master rural artisan Kashinath Kumbhar leading 35 village artisans in traditional terracotta pottery, cane bamboo weaving, and eco-friendly handicrafts.",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
     badges: ["Master Artisan", "Rural Self-Help Mentor", "100% Eco-Friendly"]
   },
   {
     id: "seller-3",
     name: "AmrutDhara Indigenous Dairy & Gir Gaushala",
-    contactPerson: "Unnati Pawar",
+    contactPerson: "Govindbhai Rabari",
     phone: "+91 97233 11840",
-    email: "unnati.pawar@gramsetu.in",
+    email: "govindbhai.rabari@gramsetu.in",
     village: "Mogri",
     district: "Anand",
     state: "Gujarat",
@@ -124,16 +124,16 @@ export const initialSellers = [
     productsCount: 6,
     isVerified: true,
     joinedDate: "November 2023",
-    bio: "Founded by Unnati Pawar, sourcing pure grass-fed Gir cow milk and traditional bilona churned golden ghee directly from 60 cattle-raising households.",
+    bio: "Founded by Govindbhai Rabari, sourcing pure grass-fed Gir cow milk and traditional bilona churned golden ghee directly from 60 cattle-raising households.",
     avatar: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=400&q=80",
     badges: ["A2 Certified", "Cold Chain Monitored", "Gramin Dairy Leader"]
   },
   {
     id: "seller-4",
     name: "VanVeda Wild Forest Organics & Honey",
-    contactPerson: "Neha Kale",
+    contactPerson: "Bhikaji Gawali",
     phone: "+91 98811 77622",
-    email: "neha.kale@gramsetu.in",
+    email: "bhikaji.gawali@gramsetu.in",
     village: "Tapola",
     district: "Satara",
     state: "Maharashtra",
@@ -142,16 +142,16 @@ export const initialSellers = [
     productsCount: 5,
     isVerified: true,
     joinedDate: "February 2024",
-    bio: "Spearheaded by Neha Kale, sustainable wild collectors harvesting raw unprocessed nectar honey from the Sahyadri Western Ghats evergreen forests.",
+    bio: "Spearheaded by forest elder Bhikaji Gawali, sustainable wild collectors harvesting raw unprocessed nectar honey from the Sahyadri Western Ghats evergreen forests.",
     avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80",
     badges: ["Forest Collective", "Raw & Unfiltered", "Cruelty-Free Bees"]
   },
   {
     id: "seller-5",
     name: "Malnad Heritage Spices & High-Curcumin Agro",
-    contactPerson: "Kajal Mali",
+    contactPerson: "Manjunath Gowda",
     phone: "+91 98450 63219",
-    email: "kajal.mali@gramsetu.in",
+    email: "manjunath.gowda@gramsetu.in",
     village: "Madikeri",
     district: "Kodagu",
     state: "Karnataka",
@@ -160,16 +160,16 @@ export const initialSellers = [
     productsCount: 8,
     isVerified: true,
     joinedDate: "December 2023",
-    bio: "Run by Kajal Mali, cultivating shade-grown high-curcumin Lakadong turmeric, hand-harvested green cardamom, and fresh natural hill spices.",
+    bio: "Run by progressive grower Manjunath Gowda, cultivating shade-grown high-curcumin Lakadong turmeric, hand-harvested green cardamom, and fresh natural hill spices.",
     avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=400&q=80",
     badges: ["High Curcumin 7.2%", "Zero Chemicals", "Direct Farm Gate"]
   },
   {
     id: "seller-6",
     name: "Chenetha Handloom & Pure Khadi Guild",
-    contactPerson: "Apurva Shinde",
+    contactPerson: "Muthusamy Chettiar",
     phone: "+91 94432 99014",
-    email: "apurva.shinde@gramsetu.in",
+    email: "muthusamy.chettiar@gramsetu.in",
     village: "Omalur",
     district: "Salem",
     state: "Tamil Nadu",
@@ -178,16 +178,16 @@ export const initialSellers = [
     productsCount: 11,
     isVerified: true,
     joinedDate: "May 2024",
-    bio: "Led by Apurva Shinde, heritage pit-loom weavers crafting pure unbleached cotton bags, utility kitchen towels, and handwoven rural khadi.",
+    bio: "Led by master weaver Muthusamy Chettiar, heritage pit-loom weavers crafting pure unbleached cotton bags, utility kitchen towels, and handwoven rural khadi.",
     avatar: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=400&q=80",
     badges: ["Handloom Mark Certified", "Zero Plastic Mission", "Artisan Direct"]
   },
   {
     id: "seller-7",
     name: "GramTech Modern Farm Mechanization & Solar",
-    contactPerson: "Aditya Shivale",
+    contactPerson: "Dattatraya Shinde",
     phone: "+91 98200 12345",
-    email: "aditya.shivale@gramsetu.in",
+    email: "dattatraya.shinde@gramsetu.in",
     village: "Gangapur",
     district: "Nashik",
     state: "Maharashtra",
@@ -196,7 +196,7 @@ export const initialSellers = [
     productsCount: 4,
     isVerified: true,
     joinedDate: "January 2024",
-    bio: "Managed by Aditya Shivale, providing modern mechanized tractor plowing, harvesters, and solar water pump technical servicing across Nashik district.",
+    bio: "Managed by Dattatraya Shinde, providing modern mechanized tractor plowing, harvesters, and solar water pump technical servicing across Nashik district.",
     avatar: "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&w=400&q=80",
     badges: ["Machinery Expert", "Rapid Field Service", "Kisan Sahayak"]
   }
@@ -227,11 +227,11 @@ export const initialProducts = [
       "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80"
     ],
-    description: "Sun-ripened, golden Sharbati wheat grains hand-cleaned and grown with jeevamrut organic compost by Nitin Imade. Produces exceptionally soft, sweet rotis with high dietary fiber and zero pesticide residue.",
+    description: "Sun-ripened, golden Sharbati wheat grains hand-cleaned and grown with jeevamrut organic compost by Ramrao Patil. Produces exceptionally soft, sweet rotis with high dietary fiber and zero pesticide residue.",
     harvestDate: "April 2026",
     deliveryInfo: "Direct dispatch from farm within 24 hours. Bulk bag packaging available (30kg, 50kg).",
     specifications: {
-      "Farmer": "Nitin Imade",
+      "Farmer": "Ramrao Patil",
       "Grain Variety": "Golden Sharbati MP Heritage",
       "Cultivation Mode": "100% Organic Jeevamrut",
       "Moisture Content": "Under 11%",
@@ -262,11 +262,11 @@ export const initialProducts = [
       "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1546094096-0df4bcaaa337?auto=format&fit=crop&w=800&q=80"
     ],
-    description: "Vine-ripened indigenous heirloom tomatoes grown by Nitin Imade, known for their tangy punch, juicy pulp, and thin skin. Harvested at sunrise and packed in ventilated crates.",
+    description: "Vine-ripened indigenous heirloom tomatoes grown by Ramrao Patil, known for their tangy punch, juicy pulp, and thin skin. Harvested at sunrise and packed in ventilated crates.",
     harvestDate: "Daily morning harvest",
     deliveryInfo: "Same-day or next-day local delivery in crates. Wholesale rates on orders above 50 kg.",
     specifications: {
-      "Farmer": "Nitin Imade",
+      "Farmer": "Ramrao Patil",
       "Variety": "Desi Sour Round Heirloom",
       "Harvest": "Harvested fresh at 6:00 AM",
       "Grade": "A Grade (uniform sizing)"
@@ -296,11 +296,11 @@ export const initialProducts = [
       "https://images.unsplash.com/photo-1597484661643-2f5fef640dd1?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
     ],
-    description: "Carefully hand-interwoven by master artisan Siddhesh Kumbhar using seasoned riverbank bamboo. Extremely sturdy, completely biodegradable, and treated naturally against insects with neem oil smoke.",
+    description: "Carefully hand-interwoven by master artisan Kashinath Kumbhar using seasoned riverbank bamboo. Extremely sturdy, completely biodegradable, and treated naturally against insects with neem oil smoke.",
     harvestDate: "Handmade this season",
     deliveryInfo: "Carefully bubble & corrugated boxed to prevent crushing during transit.",
     specifications: {
-      "Artisan": "Siddhesh Kumbhar",
+      "Artisan": "Kashinath Kumbhar",
       "Material": "100% Mature River Bamboo",
       "Dimensions": "14 inch diameter x 8 inch height",
       "Weight Capacity": "Up to 8 kg items"
@@ -330,11 +330,11 @@ export const initialProducts = [
       "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=800&q=80"
     ],
-    description: "100% raw, unheated, unfiltered mountain forest honey collected by Neha Kale from wild cliff bee colonies in Mahabaleshwar-Tapola valley. Rich in pollen and deep floral notes.",
+    description: "100% raw, unheated, unfiltered mountain forest honey collected by Bhikaji Gawali from wild cliff bee colonies in Mahabaleshwar-Tapola valley. Rich in pollen and deep floral notes.",
     harvestDate: "March 2026 Forest Harvest",
     deliveryInfo: "Shipped in food-grade glass jars with leak-proof seal and safety cushioning.",
     specifications: {
-      "Harvester": "Neha Kale",
+      "Harvester": "Bhikaji Gawali",
       "Processing": "Zero Heat, Cold-Strained through Cotton",
       "Floral Source": "Hirda, Jamun, and Karvi forest blooms",
       "Packaging": "500g Hexagonal Glass Jar"
@@ -364,11 +364,11 @@ export const initialProducts = [
       "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80"
     ],
-    description: "Heavy-duty unbleached natural cotton canvas bag spun by Apurva Shinde on traditional hand charkhas and pit looms. Reinforced double stitching can easily support heavy groceries up to 15 kg.",
+    description: "Heavy-duty unbleached natural cotton canvas bag spun by Muthusamy Chettiar on traditional hand charkhas and pit looms. Reinforced double stitching can easily support heavy groceries up to 15 kg.",
     harvestDate: "Handmade in Tamil Nadu",
     deliveryInfo: "Ships within 2 days. Foldable, machine-washable.",
     specifications: {
-      "Weaver": "Apurva Shinde",
+      "Weaver": "Muthusamy Chettiar",
       "Fabric": "100% Pure Handspun Cotton (340 GSM)",
       "Handles": "Heavy cotton webbing, 12-inch shoulder drop",
       "Eco Impact": "Replaces 500+ single-use plastic bags"
@@ -398,11 +398,11 @@ export const initialProducts = [
       "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1528750997573-59b89d56f4f7?auto=format&fit=crop&w=800&q=80"
     ],
-    description: "Pure, thick, unadulterated raw milk from free-grazing Murrah buffaloes raised by Unnati Pawar's dairy co-op. Naturally rich in 7.5% butterfat and calcium.",
+    description: "Pure, thick, unadulterated raw milk from free-grazing Murrah buffaloes raised by Govindbhai Rabari's dairy co-op. Naturally rich in 7.5% butterfat and calcium.",
     harvestDate: "Daily Morning & Evening Milking",
     deliveryInfo: "Delivered chilled in insulated stainless steel cans or glass bottles within 15 km radius.",
     specifications: {
-      "Dairy Lead": "Unnati Pawar",
+      "Dairy Lead": "Govindbhai Rabari",
       "Fat Content": "7.2% - 7.8% naturally occurring",
       "SNF": "9.0%+",
       "Preservatives": "0% (Nil adulteration guaranteed)"
@@ -432,11 +432,11 @@ export const initialProducts = [
       "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=800&q=80"
     ],
-    description: "High-potency organic turmeric hand-pounded by Kajal Mali at low rpm to retain natural essential oils. Contains a verified 7.2% curcumin content with deep therapeutic aroma.",
+    description: "High-potency organic turmeric hand-pounded by Manjunath Gowda at low rpm to retain natural essential oils. Contains a verified 7.2% curcumin content with deep therapeutic aroma.",
     harvestDate: "February 2026 harvest",
     deliveryInfo: "Airtight zip-lock aluminum pouch packaging to preserve curcumin efficacy.",
     specifications: {
-      "Grower": "Kajal Mali",
+      "Grower": "Manjunath Gowda",
       "Curcumin Content": "7.2% (Verified Lab Quality)",
       "Grinding": "Cold stone pulverized",
       "Color": "Deep golden amber"
@@ -466,11 +466,11 @@ export const initialProducts = [
       "https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?auto=format&fit=crop&w=800&q=80"
     ],
-    description: "GI-tagged original coastal Alphonso mangoes curated by Nitin Imade, naturally grass-hay ripened without chemical carbide. Incomparable sweetness and saffron aroma.",
+    description: "GI-tagged original coastal Alphonso mangoes curated by Ramrao Patil, naturally grass-hay ripened without chemical carbide. Incomparable sweetness and saffron aroma.",
     harvestDate: "Seasonal harvest",
     deliveryInfo: "Dispatched in sturdy wooden cartons with straw bedding.",
     specifications: {
-      "Farmer": "Nitin Imade",
+      "Farmer": "Ramrao Patil",
       "Ripening": "100% Natural Grass Hay (Penda)",
       "Fruit Count": "12 large pieces (250g - 300g each)"
     }
@@ -499,11 +499,11 @@ export const initialProducts = [
       "https://images.unsplash.com/photo-1631451095765-2c91616fc9e6?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1589927986089-35812388d1f4?auto=format&fit=crop&w=800&q=80"
     ],
-    description: "Crafted by Unnati Pawar strictly via Vedic Bilona method: whole A2 Gir cow milk cultured into curd, hand-churned with wooden bi-directional bilona, and slow-simmered over cow-dung firewood.",
+    description: "Crafted by Govindbhai Rabari strictly via Vedic Bilona method: whole A2 Gir cow milk cultured into curd, hand-churned with wooden bi-directional bilona, and slow-simmered over cow-dung firewood.",
     harvestDate: "Handmade this week",
     deliveryInfo: "Glass bottle packaged with bubble wrapping.",
     specifications: {
-      "Producer": "Unnati Pawar",
+      "Producer": "Govindbhai Rabari",
       "Method": "Traditional Vedic 2-Way Wooden Bilona",
       "Source": "Free-grazing indigenous Gir cows",
       "Texture": "Danedar (golden granular)"
@@ -533,11 +533,11 @@ export const initialProducts = [
       "https://images.unsplash.com/photo-1595246140625-573b715d11dc?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=800&q=80"
     ],
-    description: "55 HP 4WD Mahindra tractor managed by Aditya Shivale with rotavator, seed-drill, and reversible mouldboard plough attachments with experienced local driver. Available for nearby village farms.",
+    description: "55 HP 4WD Mahindra tractor managed by Dattatraya Shinde with rotavator, seed-drill, and reversible mouldboard plough attachments with experienced local driver. Available for nearby village farms.",
     harvestDate: "On-demand availability",
     deliveryInfo: "Reaches your field within 2 hours of confirmation in Nashik tehsil.",
     specifications: {
-      "Service Operator": "Aditya Shivale",
+      "Service Operator": "Dattatraya Shinde",
       "Horsepower": "55 HP 4WD",
       "Driver Included": "Yes (Fuel & Operator included)"
     }
@@ -547,11 +547,11 @@ export const initialProducts = [
 export const initialOrders = [
   {
     id: "GS10245",
-    buyerName: "Aditya Shivale",
+    buyerName: "Aniket Deshmukh",
     buyerPhone: "+91 98200 12345",
-    buyerEmail: "aditya.shivale@gramsetu.in",
+    buyerEmail: "aniket.deshmukh@gmail.com",
     deliveryAddress: {
-      name: "Aditya Shivale",
+      name: "Aniket Deshmukh",
       phone: "+91 98200 12345",
       address: "Flat 402, Green View Society, Gangapur Road",
       village: "Gangapur",
@@ -579,7 +579,7 @@ export const initialOrders = [
     status: "Out for Delivery",
     createdAt: "2026-09-08T10:30:00Z",
     timeline: [
-      { status: "Order Placed", date: "08 Sep 2026, 10:30 AM", completed: true, note: "Order placed by Aditya Shivale via UPI" },
+      { status: "Order Placed", date: "08 Sep 2026, 10:30 AM", completed: true, note: "Order placed by Aniket Deshmukh via UPI" },
       { status: "Seller Accepted", date: "08 Sep 2026, 11:15 AM", completed: true, note: "Sahyadri Jaivik Kisan Utpadak FPC accepted order" },
       { status: "Product Ready", date: "09 Sep 2026, 08:00 AM", completed: true, note: "20kg grain bagged & quality certified" },
       { status: "Out for Delivery", date: "10 Sep 2026, 09:30 AM", completed: true, note: "GramSetu Rural Express van out for delivery" },
@@ -594,11 +594,11 @@ export const initialOrders = [
   },
   {
     id: "GS10244",
-    buyerName: "Kajal Mali",
+    buyerName: "Sunita Kulkarni",
     buyerPhone: "+91 98199 44332",
-    buyerEmail: "kajal.mali@gramsetu.in",
+    buyerEmail: "sunita.kulkarni@gmail.com",
     deliveryAddress: {
-      name: "Kajal Mali",
+      name: "Sunita Kulkarni",
       phone: "+91 98199 44332",
       address: "Shop 12, Main Bazaar Road",
       village: "Dindori",
@@ -627,14 +627,14 @@ export const initialOrders = [
     createdAt: "2026-09-07T14:10:00Z",
     timeline: [
       { status: "Order Placed", date: "07 Sep 2026, 02:10 PM", completed: true, note: "Order placed via COD" },
-      { status: "Seller Accepted", date: "07 Sep 2026, 02:40 PM", completed: true, note: "Nitin Imade confirmed fresh harvest" },
+      { status: "Seller Accepted", date: "07 Sep 2026, 02:40 PM", completed: true, note: "Ramrao Patil confirmed fresh harvest" },
       { status: "Product Ready", date: "07 Sep 2026, 05:00 PM", completed: true, note: "Packed in aerated farm crates" },
       { status: "Out for Delivery", date: "08 Sep 2026, 08:30 AM", completed: true, note: "Dispatched to shop" },
       { status: "Delivered", date: "08 Sep 2026, 11:20 AM", completed: true, note: "Delivered & cash ₹490 collected" }
     ],
     trackingDetails: {
       courier: "Direct Farm Delivery",
-      driverName: "Nitin Imade",
+      driverName: "Pandurang Shinde",
       driverPhone: "+91 98221 45091",
       estimatedDelivery: "Delivered"
     }
@@ -645,17 +645,17 @@ export const initialReviews = [
   {
     id: "rev-1",
     productId: "prod-1",
-    userName: "Aditya Shivale",
+    userName: "Aniket Deshmukh",
     userRole: "Verified Buyer",
     rating: 5,
     date: "04 Sep 2026",
-    comment: "Outstanding Sharbati wheat from Nitin Imade! The rotis puffed up like balloons and remained super soft. Direct farm gate purity without middleman adulteration.",
+    comment: "Outstanding Sharbati wheat from Ramrao Patil! The rotis puffed up like balloons and remained super soft. Direct farm gate purity without middleman adulteration.",
     verifiedPurchase: true
   },
   {
     id: "rev-2",
     productId: "prod-1",
-    userName: "Unnati Pawar",
+    userName: "Govindbhai Rabari",
     userRole: "Verified Buyer",
     rating: 5,
     date: "28 Aug 2026",
@@ -665,31 +665,31 @@ export const initialReviews = [
   {
     id: "rev-3",
     productId: "prod-3",
-    userName: "Neha Kale",
+    userName: "Bhikaji Gawali",
     userRole: "Verified Customer",
     rating: 5,
     date: "02 Sep 2026",
-    comment: "The bamboo craftsmanship by Siddhesh Kumbhar is top notch! Authentic, sturdy weave that gives our home a beautiful earthy rustic touch.",
+    comment: "The bamboo craftsmanship by Kashinath Kumbhar is top notch! Authentic, sturdy weave that gives our home a beautiful earthy rustic touch.",
     verifiedPurchase: true
   },
   {
     id: "rev-4",
     productId: "prod-4",
-    userName: "Apurva Shinde",
+    userName: "Muthusamy Chettiar",
     userRole: "Verified Buyer",
     rating: 5,
     date: "01 Sep 2026",
-    comment: "Genuine raw forest honey harvested by Neha Kale. Crystallizes naturally and has distinct herbal fragrance of wild Sahyadri flora.",
+    comment: "Genuine raw forest honey harvested by Bhikaji Gawali. Crystallizes naturally and has distinct herbal fragrance of wild Sahyadri flora.",
     verifiedPurchase: true
   },
   {
     id: "rev-5",
     productId: "prod-6",
-    userName: "Siddhesh Kumbhar",
+    userName: "Kashinath Kumbhar",
     userRole: "Verified Buyer",
     rating: 5,
     date: "06 Sep 2026",
-    comment: "Pure and thick buffalo milk from Unnati Pawar's dairy. Cream layer is thick and tastes like authentic village farm milk.",
+    comment: "Pure and thick buffalo milk from Govindbhai Rabari's dairy. Cream layer is thick and tastes like authentic village farm milk.",
     verifiedPurchase: true
   }
 ];

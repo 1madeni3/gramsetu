@@ -113,7 +113,7 @@ const LoginPage = ({ setActivePage, adminRedirectReason }) => {
               onClick={handleQuickBuyer}
               className="p-2 rounded-xl bg-[#F4B942] text-[#1F2937] text-[11px] font-bold hover:bg-[#E5A932] transition-colors flex items-center justify-center gap-1 shadow-sm"
             >
-              <span>🛒 Buyer (Aditya)</span>
+              <span>🛒 Buyer (Aniket)</span>
             </button>
           </div>
           <p className="text-[10px] text-stone-500 text-center italic">
@@ -199,7 +199,7 @@ const LoginPage = ({ setActivePage, adminRedirectReason }) => {
             type="submit"
             className="w-full btn-primary text-xs py-3 font-bold shadow-md"
           >
-            Sign In as {role === 'admin' ? 'Super Admin (Nitin Imade)' : role === 'seller' ? 'Producer (Nitin Imade)' : 'Buyer'}
+            Sign In as {role === 'admin' ? 'Super Admin (Nitin Imade)' : role === 'seller' ? 'Producer (Ramrao Patil)' : 'Buyer'}
           </button>
         </form>
 

@@ -29,7 +29,7 @@ const BuyerSidebar = ({ currentTab, setCurrentTab, setActivePage }) => {
           </div>
           <div className="min-w-0 flex-1">
             <h4 className="font-bold text-xs text-stone-900 truncate">
-              {user?.name || "Aditya Shivale"}
+              {user?.name || "Aniket Deshmukh"}
             </h4>
             <span className="inline-flex items-center gap-1 text-[10px] text-stone-500 font-medium">
               🛒 Registered Buyer

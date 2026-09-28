@@ -14,7 +14,7 @@ const CheckoutPage = ({ setActivePage, onOrderPlaced }) => {
   const { createOrder } = useMarketplace();
 
   const [address, setAddress] = useState({
-    name: user?.name || 'Aditya Shivale',
+    name: user?.name || 'Aniket Deshmukh',
     phone: user?.phone || '+91 98200 12345',
     address: user?.address || 'Flat 402, Green View Society, Gangapur Road',
     village: user?.village || 'Gangapur',
@@ -45,7 +45,7 @@ const CheckoutPage = ({ setActivePage, onOrderPlaced }) => {
       const newOrder = createOrder({
         buyerName: address.name,
         buyerPhone: address.phone,
-        buyerEmail: user?.email || 'aditya.shivale@gramsetu.in',
+        buyerEmail: user?.email || 'aniket.deshmukh@gmail.com',
         deliveryAddress: address,
         items: cartItems,
         subtotal,
@@ -123,7 +123,7 @@ const CheckoutPage = ({ setActivePage, onOrderPlaced }) => {
                   name="name"
                   value={address.name}
                   onChange={handleInputChange}
-                  placeholder="e.g. Aditya Shivale"
+                  placeholder="e.g. Aniket Deshmukh"
                   className="w-full p-2.5 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#176B3A]"
                   required
                 />
