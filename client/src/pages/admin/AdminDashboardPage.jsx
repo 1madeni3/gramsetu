@@ -32,32 +32,12 @@ import {
   Check
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
-import { useMarketplace } from '../../context/MarketplaceContext';
+import { API_BASE, useMarketplace } from '../../context/MarketplaceContext';
 
 export default function AdminDashboardPage({ setActivePage }) {
   const { user } = useAuth();
   const { products, sellers, orders } = useMarketplace();
-
-  // Strict Security Guard: Only Nitin Imade (nitinimade@gmail.com) can access the Admin Dashboard
-  if (!user || user.email?.toLowerCase() !== 'nitinimade@gmail.com') {
-    return (
-      <div className="max-w-md mx-auto my-20 p-8 bg-white rounded-3xl border border-stone-200 shadow-xl text-center space-y-4">
-        <div className="w-16 h-16 bg-amber-100 text-stone-900 rounded-full flex items-center justify-center mx-auto text-2xl border border-amber-300">
-          🔒
-        </div>
-        <h2 className="text-xl font-display font-extrabold text-stone-900">Restricted Admin Access</h2>
-        <p className="text-xs text-stone-600 leading-relaxed">
-          Access to this dashboard is private and strictly restricted to <strong>Nitin Imade</strong> (<code>nitinimade@gmail.com</code>).
-        </p>
-        <button
-          onClick={() => setActivePage('login')}
-          className="w-full btn-primary text-xs py-3 font-bold"
-        >
-          Sign In with Admin Credentials
-        </button>
-      </div>
-    );
-  }
+  const isAdmin = user?.email?.toLowerCase() === 'nitinimade@gmail.com';
 
   // State
   const [activeTab, setActiveTab] = useState('users'); // 'users' | 'sellers' | 'products' | 'orders' | 'diagnostics'
@@ -92,7 +72,8 @@ export default function AdminDashboardPage({ setActivePage }) {
   const fetchUsers = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/admin/users');
+      if (!API_BASE) throw new Error('Backend API is not configured');
+      const res = await fetch(`${API_BASE}/admin/users`);
       const json = await res.json();
       if (json.success && json.data) {
         setUsersList(json.data);
@@ -100,7 +81,7 @@ export default function AdminDashboardPage({ setActivePage }) {
         throw new Error(json.message || 'Failed to fetch users');
       }
     } catch (err) {
-      console.warn('Using fallback users due to API error:', err.message);
+      if (API_BASE) console.warn('Using fallback users due to API error:', err.message);
       // Fallback local users matching seedData
       setUsersList([
         {
@@ -279,8 +260,28 @@ export default function AdminDashboardPage({ setActivePage }) {
   };
 
   useEffect(() => {
-    fetchUsers();
-  }, []);
+    if (isAdmin) fetchUsers();
+  }, [isAdmin]);
+
+  if (!isAdmin) {
+    return (
+      <div className="max-w-md mx-auto my-20 p-8 bg-white rounded-3xl border border-stone-200 shadow-xl text-center space-y-4">
+        <div className="w-16 h-16 bg-amber-100 text-stone-900 rounded-full flex items-center justify-center mx-auto text-2xl border border-amber-300">
+          🔒
+        </div>
+        <h2 className="text-xl font-display font-extrabold text-stone-900">Restricted Admin Access</h2>
+        <p className="text-xs text-stone-600 leading-relaxed">
+          Access to this dashboard is private and strictly restricted to <strong>Nitin Imade</strong> (<code>nitinimade@gmail.com</code>).
+        </p>
+        <button
+          onClick={() => setActivePage('login')}
+          className="w-full btn-primary text-xs py-3 font-bold"
+        >
+          Sign In with Admin Credentials
+        </button>
+      </div>
+    );
+  }
 
   // Filtered Users
   const filteredUsers = usersList.filter(u => {
@@ -303,11 +304,13 @@ export default function AdminDashboardPage({ setActivePage }) {
   const handleToggleStatus = async (userId, currentStatus) => {
     const nextStatus = currentStatus === 'Active' || currentStatus === 'Verified' ? 'Suspended' : 'Active';
     try {
-      await fetch(`/api/admin/users/${userId}`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ status: nextStatus })
-      });
+      if (API_BASE) {
+        await fetch(`${API_BASE}/admin/users/${userId}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ status: nextStatus })
+        });
+      }
     } catch {
       // ignore
     }
@@ -323,7 +326,7 @@ export default function AdminDashboardPage({ setActivePage }) {
       return;
     }
     try {
-      await fetch(`/api/admin/users/${userId}`, { method: 'DELETE' });
+      if (API_BASE) await fetch(`${API_BASE}/admin/users/${userId}`, { method: 'DELETE' });
     } catch {
       // ignore
     }
@@ -347,11 +350,13 @@ export default function AdminDashboardPage({ setActivePage }) {
     };
 
     try {
-      await fetch('/api/admin/users', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(newUserObj)
-      });
+      if (API_BASE) {
+        await fetch(`${API_BASE}/admin/users`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newUserObj)
+        });
+      }
     } catch {
       // ignore
     }

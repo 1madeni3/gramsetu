@@ -4,7 +4,7 @@ import { categoriesData } from '../data/categories';
 
 const MarketplaceContext = createContext();
 
-const API_BASE = import.meta.env.VITE_API_BASE || '/api';
+export const API_BASE = import.meta.env.VITE_API_BASE?.replace(/\/+$/, '') || '';
 
 const DATA_VERSION = 'v6_authentic_relatable_images';
 
@@ -86,6 +86,8 @@ export const MarketplaceProvider = ({ children }) => {
 
   // Optional background fetch from API
   useEffect(() => {
+    if (!API_BASE) return;
+
     const fetchApiData = async () => {
       try {
         const res = await fetch(`${API_BASE}/products`);
@@ -118,11 +120,13 @@ export const MarketplaceProvider = ({ children }) => {
     setProducts(prev => [newProd, ...prev]);
 
     // Async sync with API if online
-    fetch(`${API_BASE}/products`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newProd)
-    }).catch(() => {});
+    if (API_BASE) {
+      fetch(`${API_BASE}/products`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newProd)
+      }).catch(() => {});
+    }
 
     return newProd;
   };
@@ -131,16 +135,18 @@ export const MarketplaceProvider = ({ children }) => {
     setProducts(prev =>
       prev.map(p => (p.id === id ? { ...p, ...updates } : p))
     );
-    fetch(`${API_BASE}/products/${id}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(updates)
-    }).catch(() => {});
+    if (API_BASE) {
+      fetch(`${API_BASE}/products/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updates)
+      }).catch(() => {});
+    }
   };
 
   const deleteProduct = (id) => {
     setProducts(prev => prev.filter(p => p.id !== id));
-    fetch(`${API_BASE}/products/${id}`, { method: 'DELETE' }).catch(() => {});
+    if (API_BASE) fetch(`${API_BASE}/products/${id}`, { method: 'DELETE' }).catch(() => {});
   };
 
   const createOrder = (orderData) => {
@@ -191,11 +197,13 @@ export const MarketplaceProvider = ({ children }) => {
 
     setOrders(prev => [newOrder, ...prev]);
 
-    fetch(`${API_BASE}/orders`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newOrder)
-    }).catch(() => {});
+    if (API_BASE) {
+      fetch(`${API_BASE}/orders`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newOrder)
+      }).catch(() => {});
+    }
 
     return newOrder;
   };
@@ -225,11 +233,13 @@ export const MarketplaceProvider = ({ children }) => {
       })
     );
 
-    fetch(`${API_BASE}/orders/${orderId}/status`, {
-      method: 'PATCH',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ status: newStatus, note })
-    }).catch(() => {});
+    if (API_BASE) {
+      fetch(`${API_BASE}/orders/${orderId}/status`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status: newStatus, note })
+      }).catch(() => {});
+    }
   };
 
   const addReview = (reviewData) => {
