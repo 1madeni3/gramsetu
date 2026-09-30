@@ -6,7 +6,7 @@ const MarketplaceContext = createContext();
 
 const API_BASE = import.meta.env.VITE_API_BASE || '/api';
 
-const DATA_VERSION = 'v5_rich_media_products';
+const DATA_VERSION = 'v6_authentic_relatable_images';
 
 export const MarketplaceProvider = ({ children }) => {
   // Sync fresh initial products and data if version changes

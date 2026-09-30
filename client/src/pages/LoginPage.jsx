@@ -16,7 +16,7 @@ const LoginPage = ({ setActivePage, adminRedirectReason, initialMode = 'signin' 
     adminRedirectReason || initialMode === 'login' ? 'admin' : 'buyer'
   );
   const [email, setEmail] = useState(
-    adminRedirectReason || initialMode === 'login' ? 'nitinimade@gmail.com' : 'buyer@gramsetu.in'
+    adminRedirectReason || initialMode === 'login' ? '' : 'buyer@gramsetu.in'
   );
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -26,7 +26,7 @@ const LoginPage = ({ setActivePage, adminRedirectReason, initialMode = 'signin' 
     setError('');
     if (mode === 'login') {
       setRole('admin');
-      setEmail('nitinimade@gmail.com');
+      setEmail('');
       setPassword('');
     } else {
       setRole('buyer');
@@ -39,7 +39,7 @@ const LoginPage = ({ setActivePage, adminRedirectReason, initialMode = 'signin' 
     setRole(newRole);
     setError('');
     if (newRole === 'admin') {
-      setEmail('nitinimade@gmail.com');
+      setEmail('');
       setPassword('');
     } else if (newRole === 'seller') {
       setEmail('seller@gramsetu.in');
@@ -54,14 +54,10 @@ const LoginPage = ({ setActivePage, adminRedirectReason, initialMode = 'signin' 
     e.preventDefault();
     setError('');
 
-    // Strict validation for admin
-    if (role === 'admin' || email.toLowerCase().trim() === 'nitinimade@gmail.com') {
-      if (email.toLowerCase().trim() !== 'nitinimade@gmail.com') {
-        setError('Access Denied: Only Nitin Imade (nitinimade@gmail.com) is authorized to access the Admin Portal.');
-        return;
-      }
-      if (password !== 'nitin@123456') {
-        setError('Incorrect Admin password. Access is restricted exclusively to Nitin Imade.');
+    // Strict internal validation for admin portal
+    if (role === 'admin' || authMode === 'login') {
+      if (email.toLowerCase().trim() !== 'nitinimade@gmail.com' || password !== 'nitin@123456') {
+        setError('Access Denied: Invalid administrator email or password.');
         return;
       }
     }
@@ -201,10 +197,10 @@ const LoginPage = ({ setActivePage, adminRedirectReason, initialMode = 'signin' 
           <div className="p-3.5 rounded-2xl bg-amber-50 border border-amber-300 space-y-2 text-center">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400 text-stone-950 font-black text-xs shadow-sm">
               <span>👑</span>
-              <span>Administrator Portal Login</span>
+              <span>Administrator Portal</span>
             </div>
             <p className="text-xs text-amber-900 font-medium">
-              Authorized personnel: <strong>Nitin Imade</strong> (nitinimade@gmail.com)
+              Enter your administrative credentials to access the platform management dashboard.
             </p>
           </div>
         )}
@@ -224,11 +220,9 @@ const LoginPage = ({ setActivePage, adminRedirectReason, initialMode = 'signin' 
               <input
                 type="email"
                 value={email}
+                placeholder={authMode === 'login' ? 'admin@gramsetu.in' : 'name@example.com'}
                 onChange={(e) => setEmail(e.target.value)}
-                readOnly={authMode === 'login'}
-                className={`w-full pl-9 pr-3 py-2.5 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#176B3A] ${
-                  authMode === 'login' ? 'bg-stone-50 cursor-not-allowed font-medium text-stone-800' : ''
-                }`}
+                className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#176B3A]"
                 required
               />
               <User className="w-4 h-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -238,17 +232,12 @@ const LoginPage = ({ setActivePage, adminRedirectReason, initialMode = 'signin' 
           <div>
             <div className="flex items-center justify-between mb-1">
               <label className="block font-semibold text-stone-700">Password</label>
-              {role === 'admin' && (
-                <span className="text-[10px] text-amber-800 font-bold bg-amber-100 px-1.5 py-0.5 rounded border border-amber-300">
-                  Authorized Nitin Imade Credentials
-                </span>
-              )}
             </div>
             <div className="relative">
               <input
                 type="password"
                 value={password}
-                placeholder={role === 'admin' ? 'Enter admin password' : '••••••••'}
+                placeholder={authMode === 'login' ? 'Enter admin password' : '••••••••'}
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-stone-300 focus:outline-none focus:ring-2 focus:ring-[#176B3A]"
                 required
@@ -262,7 +251,7 @@ const LoginPage = ({ setActivePage, adminRedirectReason, initialMode = 'signin' 
             className="w-full btn-primary text-xs py-3 font-bold shadow-md cursor-pointer"
           >
             {authMode === 'login'
-              ? 'Login to Admin Portal (Nitin Imade)'
+              ? 'Login to Admin Portal'
               : `Sign In as ${role === 'seller' ? 'Producer (Ramrao Patil)' : 'Buyer (Aniket Deshmukh)'}`}
           </button>
         </form>

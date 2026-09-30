@@ -225,7 +225,7 @@ export const initialProducts = [
     minOrderQty: 5,
     images: [
       "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1543257580-7269da773bf5?auto=format&fit=crop&w=800&q=80"
     ],
     description: "Sun-ripened, golden Sharbati wheat grains hand-cleaned and grown with jeevamrut organic compost by Ramrao Patil. Produces exceptionally soft, sweet rotis with high dietary fiber and zero pesticide residue.",
     harvestDate: "April 2026",
@@ -294,7 +294,7 @@ export const initialProducts = [
     minOrderQty: 1,
     images: [
       "https://images.unsplash.com/photo-1597484661643-2f5fef640dd1?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1526434426615-1abe81efcb0b?auto=format&fit=crop&w=800&q=80"
     ],
     description: "Carefully hand-interwoven by master artisan Kashinath Kumbhar using seasoned riverbank bamboo. Extremely sturdy, completely biodegradable, and treated naturally against insects with neem oil smoke.",
     harvestDate: "Handmade this season",
@@ -327,7 +327,7 @@ export const initialProducts = [
     isOrganic: true,
     minOrderQty: 1,
     images: [
-      "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62?auto=format&fit=crop&w=800&q=80"
     ],
     description: "100% raw, unheated, unfiltered mountain forest honey collected by Bhikaji Gawali from wild cliff bee colonies in Mahabaleshwar-Tapola valley. Rich in pollen and deep floral notes.",
@@ -362,7 +362,7 @@ export const initialProducts = [
     minOrderQty: 1,
     images: [
       "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80"
     ],
     description: "Heavy-duty unbleached natural cotton canvas bag spun by Muthusamy Chettiar on traditional hand charkhas and pit looms. Reinforced double stitching can easily support heavy groceries up to 15 kg.",
     harvestDate: "Handmade in Tamil Nadu",
@@ -429,8 +429,8 @@ export const initialProducts = [
     isOrganic: true,
     minOrderQty: 1,
     images: [
-      "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1666818398897-381dd5eb9139?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80"
     ],
     description: "High-potency organic turmeric hand-pounded by Manjunath Gowda at low rpm to retain natural essential oils. Contains a verified 7.2% curcumin content with deep therapeutic aroma.",
     harvestDate: "February 2026 harvest",
@@ -496,8 +496,8 @@ export const initialProducts = [
     isOrganic: true,
     minOrderQty: 1,
     images: [
-      "https://images.unsplash.com/photo-1631451095765-2c91616fc9e6?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1589927986089-35812388d1f4?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=800&q=80"
     ],
     description: "Crafted by Govindbhai Rabari strictly via Vedic Bilona method: whole A2 Gir cow milk cultured into curd, hand-churned with wooden bi-directional bilona, and slow-simmered over cow-dung firewood.",
     harvestDate: "Handmade this week",
@@ -530,8 +530,8 @@ export const initialProducts = [
     isOrganic: false,
     minOrderQty: 2,
     images: [
-      "https://images.unsplash.com/photo-1595246140625-573b715d11dc?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1530267981375-f0de937f5f13?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1589883661923-6476cb0ae9f2?auto=format&fit=crop&w=800&q=80"
     ],
     description: "55 HP 4WD Mahindra tractor managed by Dattatraya Shinde with rotavator, seed-drill, and reversible mouldboard plough attachments with experienced local driver. Available for nearby village farms.",
     harvestDate: "On-demand availability",
@@ -563,8 +563,8 @@ export const initialProducts = [
     isOrganic: true,
     minOrderQty: 1,
     images: [
-      "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1508817628294-5a453fa0b8fb?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1638324396229-632af05042dd?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=800&q=80"
     ],
     description: "Cold-pressed wood churned (lakdi ghani) yellow mustard oil extracted at room temperature by Ramrao Patil's farmer cooperative. Zero heating, zero chemicals, retaining 100% natural pungent flavor and essential Omega-3 fatty acids.",
     harvestDate: "Pressed Fresh Weekly",
@@ -597,8 +597,8 @@ export const initialProducts = [
     isOrganic: false,
     minOrderQty: 1,
     images: [
-      "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=800&q=80"
     ],
     description: "Wheel-thrown porous clay water vessel crafted by master artisan Kashinath Kumbhar using river silt. Naturally cools water up to 10 degrees below room temperature through microscopic evaporation while infusing alkaline minerals.",
     harvestDate: "Handcrafted this season",
@@ -665,8 +665,8 @@ export const initialProducts = [
     isOrganic: true,
     minOrderQty: 1,
     images: [
-      "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80"
     ],
     description: "Aged village recipe by Bhikaji Gawali's household made with wild sour green mangoes, hand-ground mustard seeds, fenugreek, rock salt, and wood-pressed oil. Sun-cured in ceramic martaban jars for 21 days with zero artificial preservatives.",
     harvestDate: "Handmade in traditional small batches",
@@ -699,8 +699,8 @@ export const initialProducts = [
     isOrganic: true,
     minOrderQty: 2,
     images: [
-      "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=80",
-      "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=800&q=80"
+      "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1543257580-7269da773bf5?auto=format&fit=crop&w=800&q=80"
     ],
     description: "Rain-fed indigenous dark ragi grains grown by Manjunath Gowda. Cold stone ground to preserve living bran and high dietary calcium (344mg/100g). Perfect for healthy rotis, bhakris, mudde, and nutritious baby porridge.",
     harvestDate: "Fresh Milling on Order",
@@ -733,7 +733,7 @@ export const initialProducts = [
     isOrganic: true,
     minOrderQty: 1,
     images: [
-      "https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80",
       "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80"
     ],
     description: "Traditional absorbent handloom cotton gamcha woven on wooden pit looms by Muthusamy Chettiar. Highly breathable, soft against the skin, quick-drying, and dyed with natural plant-based vegetable colors.",

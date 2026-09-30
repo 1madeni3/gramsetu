@@ -301,7 +301,7 @@ function AppContent() {
           ) : (
             <LoginPage
               setActivePage={setActivePage}
-              adminRedirectReason="🔒 Admin Portal is restricted exclusively to Nitin Imade (nitinimade@gmail.com). Please sign in with authorized credentials."
+              adminRedirectReason="🔒 Administrator Portal is restricted to authorized personnel. Please log in with administrative credentials."
             />
           )
         )}

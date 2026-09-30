@@ -50,7 +50,7 @@ export const categoriesData = [
     nameMr: "सेंद्रिय उत्पादने",
     icon: "🌱",
     description: "High-curcumin Lakadong turmeric, cold-pressed oils, and herbs",
-    bannerImg: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=600&q=80",
+    bannerImg: "https://images.unsplash.com/photo-1666818398897-381dd5eb9139?auto=format&fit=crop&w=600&q=80",
     itemCount: 31,
     subcategories: ["Lakadong Turmeric", "Cold Pressed Oils", "Moringa Powder", "Rock Salt & Jaggery"]
   },
@@ -61,7 +61,7 @@ export const categoriesData = [
     nameMr: "घरगुती खाद्यपदार्थ",
     icon: "🍯",
     description: "Raw forest honey, traditional sun-cured pickles, and millet snacks",
-    bannerImg: "https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=600&q=80",
+    bannerImg: "https://images.unsplash.com/photo-1471943311424-646960669fbc?auto=format&fit=crop&w=600&q=80",
     itemCount: 22,
     subcategories: ["Wild Forest Honey", "Mango & Lemon Pickle", "Ragi Ladoos", "Handmade Papads"]
   },
@@ -83,7 +83,7 @@ export const categoriesData = [
     nameMr: "स्थानिक ग्राम सेवा",
     icon: "🔧",
     description: "Tractor plowing rental, solar pump servicing, and soil testing",
-    bannerImg: "https://images.unsplash.com/photo-1595246140625-573b715d11dc?auto=format&fit=crop&w=600&q=80",
+    bannerImg: "https://images.unsplash.com/photo-1530267981375-f0de937f5f13?auto=format&fit=crop&w=600&q=80",
     itemCount: 15,
     subcategories: ["Tractor & Plowing Hire", "Solar Pump Repairs", "Soil & Water Testing", "Kisan Training"]
   }
