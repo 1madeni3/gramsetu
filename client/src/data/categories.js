@@ -17,7 +17,7 @@ export const categoriesData = [
     nameMr: "ताजी भाजीपाला आणि फळे",
     icon: "🥬",
     description: "Daily harvested organic vegetables, seasonal fruits, and greens",
-    bannerImg: "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?auto=format&fit=crop&w=600&q=80",
+    bannerImg: "https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&fit=crop&w=600&q=80",
     itemCount: 38,
     subcategories: ["Field Tomatoes", "Desi Onions", "Green Chillies", "Seasonal Mangoes", "Leafy Greens"]
   },

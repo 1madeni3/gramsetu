@@ -541,6 +541,210 @@ export const initialProducts = [
       "Horsepower": "55 HP 4WD",
       "Driver Included": "Yes (Fuel & Operator included)"
     }
+  },
+  {
+    id: "prod-11",
+    name: "Cold-Pressed Yellow Mustard (Kachi Ghani) Oil",
+    nameHi: "कच्ची घानी शुद्ध पीली सरसों का तेल",
+    nameMr: "लाकडी घाण्याचे शुद्ध मोहरीचे तेल",
+    category: "organic",
+    price: 220,
+    unit: "bottle (1 liter)",
+    sellerId: "seller-1",
+    sellerName: "Sahyadri Jaivik Kisan Utpadak FPC",
+    village: "Dindori",
+    district: "Nashik",
+    state: "Maharashtra",
+    distanceKm: 12,
+    rating: 4.9,
+    reviewsCount: 68,
+    stock: 180,
+    isAvailable: true,
+    isOrganic: true,
+    minOrderQty: 1,
+    images: [
+      "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1508817628294-5a453fa0b8fb?auto=format&fit=crop&w=800&q=80"
+    ],
+    description: "Cold-pressed wood churned (lakdi ghani) yellow mustard oil extracted at room temperature by Ramrao Patil's farmer cooperative. Zero heating, zero chemicals, retaining 100% natural pungent flavor and essential Omega-3 fatty acids.",
+    harvestDate: "Pressed Fresh Weekly",
+    deliveryInfo: "Glass bottle packaged securely with shockproof cardboard cushioning.",
+    specifications: {
+      "Farmer Collective": "Sahyadri Jaivik Kisan Utpadak FPC",
+      "Extraction Method": "Traditional Wooden Kolhu (Lakdi Ghani)",
+      "Purity": "100% Unrefined & Unbleached",
+      "Volume": "1000 ml"
+    }
+  },
+  {
+    id: "prod-12",
+    name: "Handcrafted Terracotta Water Matka & Clay Pot",
+    nameHi: "हस्तनिर्मित मिट्टी का प्राकृतिक मटका",
+    nameMr: "हस्तनिर्मित मातीचे थंड पाण्याचे माठ",
+    category: "handicrafts",
+    price: 290,
+    unit: "piece",
+    sellerId: "seller-2",
+    sellerName: "MatiShilp Heritage Terracotta & Art Studio",
+    village: "Ranti",
+    district: "Madhubani",
+    state: "Bihar",
+    distanceKm: 65,
+    rating: 4.8,
+    reviewsCount: 52,
+    stock: 60,
+    isAvailable: true,
+    isOrganic: false,
+    minOrderQty: 1,
+    images: [
+      "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=800&q=80"
+    ],
+    description: "Wheel-thrown porous clay water vessel crafted by master artisan Kashinath Kumbhar using river silt. Naturally cools water up to 10 degrees below room temperature through microscopic evaporation while infusing alkaline minerals.",
+    harvestDate: "Handcrafted this season",
+    deliveryInfo: "Triple-layer bubble and corrugated armor packed to prevent cracking.",
+    specifications: {
+      "Artisan": "Kashinath Kumbhar",
+      "Material": "Natural Gangetic Clay & River Silt",
+      "Capacity": "7 Liters",
+      "Includes": "Earthen Lid & Dispensing Tap"
+    }
+  },
+  {
+    id: "prod-13",
+    name: "Farm-Direct Nashik Red Onions (Garva Kanda)",
+    nameHi: "खेत से ताज़ा नासिक लाल प्याज (गरवा कांदा)",
+    nameMr: "नाशिकचा अस्सल लाल गरवा कांदा",
+    category: "produce",
+    price: 35,
+    unit: "kg",
+    sellerId: "seller-1",
+    sellerName: "Sahyadri Jaivik Kisan Utpadak FPC",
+    village: "Dindori",
+    district: "Nashik",
+    state: "Maharashtra",
+    distanceKm: 12,
+    rating: 4.8,
+    reviewsCount: 96,
+    stock: 3500,
+    isAvailable: true,
+    isOrganic: true,
+    minOrderQty: 5,
+    images: [
+      "https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1508747703725-719777637510?auto=format&fit=crop&w=800&q=80"
+    ],
+    description: "Direct farm-harvested Nashik red onions cultivated in mineral-rich black volcanic soil by Ramrao Patil. Known across India for high pungent aroma, crisp layers, and exceptional shelf life exceeding 4 months.",
+    harvestDate: "Current Rabi Season Harvest",
+    deliveryInfo: "Packed in breathable jute mesh sacks of 5kg, 10kg, and 50kg.",
+    specifications: {
+      "Farmer": "Ramrao Patil",
+      "Variety": "Nashik Garva Lal Onion",
+      "Size": "Medium to Large (45mm - 60mm)",
+      "Shelf Life": "Over 90-120 days in aerated shade"
+    }
+  },
+  {
+    id: "prod-14",
+    name: "Traditional Sun-Dried Mango & Green Chilli Achar",
+    nameHi: "पारंपरिक धूप में पका आम व मिर्च का तीखा अचार",
+    nameMr: "गावरान उन्हात सुकवलेले कैरी व मिरचीचे लोणचे",
+    category: "homemade",
+    price: 195,
+    unit: "jar (400g)",
+    sellerId: "seller-4",
+    sellerName: "VanVeda Wild Forest Organics & Honey",
+    village: "Tapola",
+    district: "Satara",
+    state: "Maharashtra",
+    distanceKm: 42,
+    rating: 4.9,
+    reviewsCount: 74,
+    stock: 210,
+    isAvailable: true,
+    isOrganic: true,
+    minOrderQty: 1,
+    images: [
+      "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=800&q=80"
+    ],
+    description: "Aged village recipe by Bhikaji Gawali's household made with wild sour green mangoes, hand-ground mustard seeds, fenugreek, rock salt, and wood-pressed oil. Sun-cured in ceramic martaban jars for 21 days with zero artificial preservatives.",
+    harvestDate: "Handmade in traditional small batches",
+    deliveryInfo: "Glass martaban jars protected with leak-proof foil seal.",
+    specifications: {
+      "Maker": "Bhikaji Gawali Household",
+      "Preservation": "Pure Cold-Pressed Oil & Sea Salt only",
+      "Oil Base": "Cold-Pressed Mustard Oil",
+      "Weight": "400 grams"
+    }
+  },
+  {
+    id: "prod-15",
+    name: "Organic Finger Millet (Nachni / Ragi) Flour",
+    nameHi: "सेंद्रिय रागी / मडुआ का शुद्ध पौष्टिक आटा",
+    nameMr: "सेंद्रिय नाचणीचे खडे व पीठ (कॅल्शियम युक्त)",
+    category: "agriculture",
+    price: 65,
+    unit: "pack (1 kg)",
+    sellerId: "seller-5",
+    sellerName: "Malnad Heritage Spices & High-Curcumin Agro",
+    village: "Madikeri",
+    district: "Kodagu",
+    state: "Karnataka",
+    distanceKm: 55,
+    rating: 4.8,
+    reviewsCount: 63,
+    stock: 450,
+    isAvailable: true,
+    isOrganic: true,
+    minOrderQty: 2,
+    images: [
+      "https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=800&q=80"
+    ],
+    description: "Rain-fed indigenous dark ragi grains grown by Manjunath Gowda. Cold stone ground to preserve living bran and high dietary calcium (344mg/100g). Perfect for healthy rotis, bhakris, mudde, and nutritious baby porridge.",
+    harvestDate: "Fresh Milling on Order",
+    deliveryInfo: "Food-grade double-layered craft paper pouch with ziplock seal.",
+    specifications: {
+      "Farmer": "Manjunath Gowda",
+      "Grain": "Desi Brown Finger Millet (Eleusine coracana)",
+      "Nutrition": "Extremely high Calcium & Dietary Fiber",
+      "Gluten": "100% Naturally Gluten-Free"
+    }
+  },
+  {
+    id: "prod-16",
+    name: "Heritage Pure Cotton Handspun Gamcha / Shawl",
+    nameHi: "शुद्ध सूती हथकरघा गमछा / उत्तरीय",
+    nameMr: "हातमाग शुद्ध सुती गमछा व उपरणे",
+    category: "clothing",
+    price: 180,
+    unit: "piece",
+    sellerId: "seller-6",
+    sellerName: "Chenetha Handloom & Pure Khadi Guild",
+    village: "Omalur",
+    district: "Salem",
+    state: "Tamil Nadu",
+    distanceKm: 88,
+    rating: 4.7,
+    reviewsCount: 42,
+    stock: 110,
+    isAvailable: true,
+    isOrganic: true,
+    minOrderQty: 1,
+    images: [
+      "https://images.unsplash.com/photo-1607083206869-4c7672e72a8a?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=800&q=80"
+    ],
+    description: "Traditional absorbent handloom cotton gamcha woven on wooden pit looms by Muthusamy Chettiar. Highly breathable, soft against the skin, quick-drying, and dyed with natural plant-based vegetable colors.",
+    harvestDate: "Handloom crafted",
+    deliveryInfo: "Ships within 24 hours. Eco-friendly biodegradable wrapper.",
+    specifications: {
+      "Weaver": "Muthusamy Chettiar",
+      "Yarn Count": "60s Pure Combed Indian Cotton",
+      "Dimensions": "1.8 meters x 0.9 meters",
+      "Color Fastness": "Tested with organic indigo and madder"
+    }
   }
 ];
 

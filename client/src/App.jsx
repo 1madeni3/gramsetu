@@ -28,12 +28,98 @@ import ContactPage from './pages/ContactPage';
 import SettingsPage from './pages/SettingsPage';
 import AdminDashboardPage from './pages/admin/AdminDashboardPage';
 
+const VALID_PAGES = [
+  'home', 'marketplace', 'categories', 'near-you', 'product-details',
+  'voice-listing', 'cart', 'checkout', 'order-tracking', 'become-seller',
+  'seller-dashboard', 'add-product', 'seller-products', 'buyer-dashboard',
+  'buyer-orders', 'how-it-works', 'about', 'contact', 'signin', 'login',
+  'register', 'settings', 'profile', 'admin-dashboard'
+];
+
+const getPageFromLocation = () => {
+  if (typeof window === 'undefined') return 'home';
+
+  // Check hash first (e.g. #/marketplace or #marketplace)
+  const hash = window.location.hash.replace(/^#\/?/, '').trim();
+  if (hash) {
+    if (hash === 'admin') return 'admin-dashboard';
+    if (hash === 'sign-in') return 'signin';
+    if (VALID_PAGES.includes(hash)) return hash;
+  }
+
+  // Check pathname (e.g. /marketplace or /admin)
+  const pathname = window.location.pathname.replace(/^\/|\/$/g, '').trim();
+  if (pathname) {
+    if (pathname === 'admin') return 'admin-dashboard';
+    if (pathname === 'sign-in') return 'signin';
+    if (VALID_PAGES.includes(pathname)) return pathname;
+  }
+
+  return 'home';
+};
+
 function AppContent() {
   const { user, isAdmin } = useAuth();
-  const [activePage, setActivePage] = useState('home');
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [activePage, setActivePageRaw] = useState(getPageFromLocation);
+  const [selectedProduct, setSelectedProduct] = useState(() => {
+    try {
+      const saved = sessionStorage.getItem('gramsetu_active_product');
+      return saved ? JSON.parse(saved) : null;
+    } catch {
+      return null;
+    }
+  });
   const [trackedOrderId, setTrackedOrderId] = useState('GS10245');
   const [isVoiceModalOpen, setIsVoiceModalOpen] = useState(false);
+
+  // Sync selectedProduct to sessionStorage so page refresh doesn't break product details view
+  useEffect(() => {
+    if (selectedProduct) {
+      try {
+        sessionStorage.setItem('gramsetu_active_product', JSON.stringify(selectedProduct));
+      } catch {}
+    }
+  }, [selectedProduct]);
+
+  // Robust page navigation that updates browser URL and history
+  const setActivePage = (page, shouldPush = true) => {
+    setActivePageRaw(page);
+    if (shouldPush && typeof window !== 'undefined') {
+      const targetUrl = page === 'home' ? '/' : `/${page}`;
+      try {
+        if (window.location.pathname !== targetUrl) {
+          window.history.pushState({ page }, '', targetUrl);
+        }
+      } catch {
+        window.location.hash = page === 'home' ? '' : `#${page}`;
+      }
+    }
+  };
+
+  // Listen to browser Back/Forward (popstate) and hashchange
+  useEffect(() => {
+    const handleLocationChange = (e) => {
+      if (e?.state?.page) {
+        setActivePageRaw(e.state.page);
+      } else {
+        setActivePageRaw(getPageFromLocation());
+      }
+    };
+
+    window.addEventListener('popstate', handleLocationChange);
+    window.addEventListener('hashchange', handleLocationChange);
+
+    // Initial sync
+    const initialPage = getPageFromLocation();
+    if (initialPage !== 'home') {
+      setActivePageRaw(initialPage);
+    }
+
+    return () => {
+      window.removeEventListener('popstate', handleLocationChange);
+      window.removeEventListener('hashchange', handleLocationChange);
+    };
+  }, []);
 
   // Scroll to top on page navigation
   useEffect(() => {
@@ -186,8 +272,12 @@ function AppContent() {
           <ContactPage setActivePage={setActivePage} />
         )}
 
+        {activePage === 'signin' && (
+          <LoginPage setActivePage={setActivePage} initialMode="signin" />
+        )}
+
         {activePage === 'login' && (
-          <LoginPage setActivePage={setActivePage} />
+          <LoginPage setActivePage={setActivePage} initialMode="login" />
         )}
 
         {activePage === 'register' && (

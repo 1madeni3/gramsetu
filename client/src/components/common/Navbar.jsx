@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Menu, X, Search, ShoppingBag, Mic, User, LogOut, LayoutDashboard,
+  Menu, X, Search, ShoppingBag, Mic, User, Lock, LogOut, LayoutDashboard,
   Store, Globe, ChevronDown, MapPin, Sparkles, PlusCircle, ShieldAlert, Shield
 } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
@@ -289,13 +289,27 @@ const Navbar = ({ activePage, setActivePage, openVoiceModal }) => {
                 )}
               </div>
             ) : (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                {/* Option 1: Sign In */}
+                <button
+                  onClick={() => setActivePage('signin')}
+                  className="text-xs font-bold text-[#176B3A] bg-[#E8F5ED] hover:bg-[#d5edd9] px-3 py-1.5 rounded-xl border border-[#176B3A]/30 transition-all shadow-sm active:scale-95 flex items-center gap-1"
+                  title="Sign In as Buyer or Village Producer"
+                >
+                  <User className="w-3.5 h-3.5" />
+                  <span>Sign In</span>
+                </button>
+
+                {/* Option 2: Login */}
                 <button
                   onClick={() => setActivePage('login')}
-                  className="text-xs font-semibold text-stone-700 hover:text-[#176B3A] px-3 py-1.5 rounded-lg hover:bg-stone-100 transition-colors"
+                  className="text-xs font-bold text-stone-700 hover:text-stone-950 px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-300 transition-all shadow-sm active:scale-95 flex items-center gap-1"
+                  title="Login with credentials"
                 >
-                  {t('login')}
+                  <Lock className="w-3.5 h-3.5 text-stone-600" />
+                  <span>Login</span>
                 </button>
+
                 <button
                   onClick={() => setActivePage('become-seller')}
                   className="btn-primary text-xs"
@@ -413,6 +427,25 @@ const Navbar = ({ activePage, setActivePage, openVoiceModal }) => {
 
           {/* Mobile Action Buttons */}
           <div className="pt-2 border-t border-stone-200 space-y-2">
+            {!user && (
+              <div className="grid grid-cols-2 gap-2 pb-1">
+                <button
+                  onClick={() => { setActivePage('signin'); setMobileMenuOpen(false); }}
+                  className="p-2.5 rounded-xl bg-[#E8F5ED] text-[#176B3A] font-bold text-xs flex items-center justify-center gap-1.5 border border-[#176B3A]/30 active:scale-95 transition-all"
+                >
+                  <User className="w-4 h-4" />
+                  <span>Sign In</span>
+                </button>
+                <button
+                  onClick={() => { setActivePage('login'); setMobileMenuOpen(false); }}
+                  className="p-2.5 rounded-xl bg-stone-100 text-stone-800 font-bold text-xs flex items-center justify-center gap-1.5 border border-stone-200 active:scale-95 transition-all"
+                >
+                  <Lock className="w-4 h-4 text-stone-600" />
+                  <span>Login</span>
+                </button>
+              </div>
+            )}
+
             {isAdmin && (
               <button
                 onClick={() => { setActivePage('admin-dashboard'); setMobileMenuOpen(false); }}

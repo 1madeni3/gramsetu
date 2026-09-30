@@ -6,9 +6,21 @@ const MarketplaceContext = createContext();
 
 const API_BASE = import.meta.env.VITE_API_BASE || '/api';
 
+const DATA_VERSION = 'v5_rich_media_products';
+
 export const MarketplaceProvider = ({ children }) => {
+  // Sync fresh initial products and data if version changes
   const [products, setProducts] = useState(() => {
     try {
+      const ver = localStorage.getItem('gramsetu_data_version');
+      if (ver !== DATA_VERSION) {
+        localStorage.setItem('gramsetu_data_version', DATA_VERSION);
+        localStorage.setItem('gramsetu_products', JSON.stringify(initialProducts));
+        localStorage.setItem('gramsetu_sellers', JSON.stringify(initialSellers));
+        localStorage.setItem('gramsetu_orders', JSON.stringify(initialOrders));
+        localStorage.setItem('gramsetu_reviews', JSON.stringify(initialReviews));
+        return initialProducts;
+      }
       const saved = localStorage.getItem('gramsetu_products');
       return saved ? JSON.parse(saved) : initialProducts;
     } catch {

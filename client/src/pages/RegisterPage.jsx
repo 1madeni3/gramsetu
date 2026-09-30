@@ -126,7 +126,7 @@ const RegisterPage = ({ setActivePage }) => {
         <div className="pt-2 text-center text-xs text-stone-500 border-t border-stone-100">
           Already have an account?{' '}
           <button
-            onClick={() => setActivePage('login')}
+            onClick={() => setActivePage('signin')}
             className="text-[#176B3A] font-bold hover:underline"
           >
             Sign In
